@@ -1,0 +1,374 @@
+name	active	alias_1	alias_10	alias_2	alias_3	alias_4	alias_5	alias_6	alias_7	alias_8	alias_9	internal_notes	latest_delinquency_data	latest_financial_data	latest_lease_data	latest_marketing_data	latest_unit_status_data	staff_only
+.meritag	False	.meritag - MERGED																True
+.wdcrst	False	.wdcrst																False
+121	False	121																False
+1515	False	1515																False
+1516	False	1516																False
+1517	False	1517																False
+1722	False	1722-merged																False
+1749	False	1749																True
+1750	False	1750																True
+1751	False	1751																True
+1758	False	1758-DEP																True
+200	False	200																False
+208	False	208																False
+220	False	220																False
+221	False	221																False
+224	False	224																False
+226	False	226																False
+227	False	227																False
+228	False	228																False
+229	False	229																False
+230	False	230																False
+232	False	232																False
+303	False	303																False
+304	False	304																False
+305	False	305																False
+307	False	307																False
+308	False	308																False
+309	False	309																False
+372	False	372																True
+435	False	435																True
+501	False	501																False
+502	False	502																False
+503	False	503																False
+504	False	504																False
+505	False	505																False
+507	False	507																False
+508	False	508																False
+601	False	601																False
+8000 Waters	False	1489										inactive - 3/23/16						False
+969	False	969																True
+Abbington Heights	False	1549																True
+Acadian Gardens	False	1372																True
+Addison Keller Springs	False	1732																True
+Alexan EAV	False	1658										Deactivated 12/21						False
+Alexander Pointe	False	1722		1643	alexpt													True
+Annex	False	1502										"This has been renamed from ""The Dakota"" to ""Annex"". Deactivated 4/29/16"						False
+Ansley Place	True	1536											${TODAY}	${TODAY}			${TODAY}	False
+Arbors at Tallwood	True	1532											${TODAY}				${TODAY}	False
+Arbors on Forest Ridge	True	1520																False
+Arbors, The	True	1574																False
+Arcadia Cove	False	1755																True
+Ashbrooke Apartments	True	1624																False
+Ashford Club	True	1713																False
+Ashton, The	True	1365																False
+Autumn Chase	True	1691		45333	.autumnc													False
+Autumn Ridge	True	1702																False
+Autumn Vista	True	1622										Autumn Vista						False
+Axis at One Pine	True	1629										name changed from Viera Plantation						False
+Axis at Westmont	True	.fountai		1484	1645							"2016 08 03 changed name from ""Fountains at Stone Crest"" to ""Axis at Westmont"""					${TODAY}	False
+Bass Lofts	True	1431																False
+Beechwood Terrace	True	1548																False
+Bel Air	True	1696																False
+Beldon Spring Lake	False	1584										Removed 2.2.16						False
+Bella Vida at Coyote Ridge	True	1467															${TODAY}	False
+Belmont at Duck Creek	True	1557																False
+Bent Tree	False	1451										Deactivated 12/1						False
+Benton Pointe	False	1304		45335	1481	.bentonp						Deactivated 1/17/2017						False
+Birchwood at Boulders	True	1413																False
+Blair's Cove	False	1582										Expect first financials on Feb 17; deactivated 4/3/2017						False
+Boardwalk	True	1495		45316														False
+Boulder Ridge	True	1436																False
+Brady Station	True	1169													${TODAY}			False
+Brazos Crossing	True	1648																False
+Briarwood Apartments	False	1390																False
+Bridgepoint	True	1074													${TODAY}			False
+Bridgeview	True	1711											${TODAY}					False
+Bristol Place	True	1546											${TODAY}			${TODAY}		False
+Broadmoor	True	1391																False
+Brookhollow	True	1529											${TODAY}				${TODAY}	False
+Brooksfield	True	1004													${TODAY}			False
+Brookside Park	False	Brookside Park																True
+Brookwood	False	1500										inactive 3/23/16						False
+Bullard Creek	True	1046													${TODAY}			False
+Bullard Crossing	True	1066													${TODAY}			False
+Cambridge Landing	False	1568										removed 2/2/2017						False
+Cameron Lakes	False	1281										Inactive - sold						False
+Candleglow	True	1712																False
+Canyon Crossing	True	1102													${TODAY}			False
+Canyon Crossing II	True	1104													${TODAY}			False
+Canyons at 45 West	False	1407										Inactive - sold (6/29/2015)						False
+Captain's Landing	True	1270													${TODAY}			False
+Carlton Court	False	1410										Deactivated 11/21/16						False
+Carmel Landing	True	1458															${TODAY}	False
+Cedar Trails	True	1462															${TODAY}	False
+Chapel Oaks	False	1141										Jason asked to remove property on 6/9						False
+Chastain Terrace	True	1433																False
+Chatham Village	True	1553											${TODAY}			${TODAY}		False
+Chelsea Commons	False	1641										Deactivated 1/31/2017						False
+Chelsea Creek	True	1463															${TODAY}	False
+City Parc at Keller	True	1556											${TODAY}			${TODAY}		False
+Clearpoint Gardens	True	1708										Activated 5/16/2017						False
+Club at Cherry Hills	False	1501										inactive - 3/23/16						False
+Club at Fossil Creek	False	45337		1480								Deactivated 6/10/16						False
+Club at Highland Park	False	1285										Removed 4/28/2017						False
+Club at Indian Creek	True	1570																False
+Club at Oak Creek	True	1021													${TODAY}			False
+Club at Washington Heights	True	1312													${TODAY}			False
+College Square	True	1168													${TODAY}			False
+College Square Village I	True	1047													${TODAY}			False
+College Square Village II	True	1048													${TODAY}			False
+Colonial Forest	False	1559										deactivated 2/2/2017						False
+Colony, The	True	1173																False
+Colt's Crossing	False	1490										inactive - 3/23/16						False
+Concord at Allendale	True	1466															${TODAY}	False
+Confluence on 3rd	True	1680																False
+Connection at Buffalo Pointe	True	1716																False
+Cornerstone, The	True	1591																False
+Courtney Cove	True	1564																False
+Crossings at Holcomb Bridge	True	1571																False
+Crossings, The	True	1573																False
+Curry Junction	True	1134													${TODAY}			False
+Cutter's Point	True	1521																False
+Diamond Loch	True	1616										Diamond Loch						False
+Eagle Crest	True	1522																False
+East Bank at Richwood Village	True	1675																False
+Eastfield Plaza	True	1695																False
+Edgewater at Sandy Springs	True	1547																False
+Edgewood	False	1143										Deactivated 1/2/2017						False
+Elan at Bluffview	True	1597		45401														False
+Elements on Park	False	1503										inactive - 3/23/16						False
+Enclave Hartland	False	1491										inactive - 3/23/16						False
+Estates at Park Avenue	True	1730																False
+Estates on Maryland	True	1613																False
+Fairways, The	False	1565																False
+Flats at West Broad Village	True	1628																False
+Forest Park	True	1268													${TODAY}			False
+Fountain Square	True	1356																False
+Fountains of Conroe	True	1412																False
+Gardens of Denton	True	1720		gardens														False
+Glenwood Vista	True	1737																False
+Grand Oaks	True	1685																False
+Grand Parkway	True	1659																False
+Granite Park	True	1670		1644	granite								${TODAY}					False
+Greentree - Texas	True	1428																False
+Grove at Alban, The	False	1534										Deactivated 4/5/17						False
+Grove, The	True	1426																False
+Harbour, The	True	1423																False
+Hawthorne Ridge	True	1552											${TODAY}			${TODAY}		False
+Heatherstone	True	1599																False
+Heights of Kennesaw	True	1432																False
+Heron Pointe	False	1638										removed 2/21/2017						False
+Hidden Harbour	True	1377																False
+Highland Ridge	True	1632																False
+Hollister Place	True	1707											${TODAY}					False
+Hunt Club	False	1504										inactive - 3/23/16						False
+Huntington Glen	True	1604		1186	.hunting							old property number was 1186 and the new number is 1604. consolidated: .hunting						False
+Huntington Pointe	True	1073													${TODAY}			False
+Indiana Village	True	1103													${TODAY}			False
+Jade Park	False	1562										Deactivated 9.30.16. Requested by Mike.						False
+Knolls, The	True	1572																False
+La Colina	False	1498		45315								Named changed from LaColina to La Colina: Deactivated 2/25/16- sold						False
+Ladera Palms	True	1450															${TODAY}	False
+Lake Ellenor	False	1642										Deactivated 12/1/16						False
+Lakes at Fountain Square	True	1646		1485	.lakes							"Name - ""Historical"". Name changed from lakes at fountain, The to Lakes at Fountain Square-Redwood"					${TODAY}	False
+Lakeshore Club Condominium	False	1249										Inactive - sold						False
+Lakeside	False	1505										inactive - 3/23/16						False
+Lakeview Residences	False	1651										Deactivated 6/1/16						False
+Landings at Brooks City Base	True	1541											${TODAY}			${TODAY}		False
+Lansbrook at Twin Creeks	False	1305		1482	45336	.lansbro						Deactivated 1/27/17						False
+Latitude Apartments and Casitas	True	1575																False
+Lenexa Pointe	True	1686																False
+Madera Point	True	1614																False
+Madison Place	True	1652																False
+Mandarin Reserve	False	1558										inactive 6/6 - Name changed from Victoria Park to Mandarin Reserve						False
+Mandarina	False	1741																True
+Maple Springs	True	1694											${TODAY}			${TODAY}		False
+Meridian	False	1523										Deactivated 5/11/16						False
+Midtown on Main	True	1586																False
+Miramar	False	1569										Deactivated 4/5/17						False
+North Slope	False	1506										inactive - 3/23/16						False
+Northgate Oaks	True	1618																False
+Northwood Village	True	1154													${TODAY}			False
+Oaks at Greenview, The	True	1535											${TODAY}	${TODAY}		${TODAY}	${TODAY}	False
+Oaks of Woodland Park, The	True	1446																False
+Oakwood Village	True	1095													${TODAY}			False
+Oasis at Bayside	False	1454										Deactivated 9/20/16						False
+Old Farm	True	1718																False
+Olivia Place	False	1747																True
+Osprey Pointe	True	1028													${TODAY}			False
+Paces River I & II	True	1438																False
+Paddock Place	True	1439																False
+Palm Canyon	True	1578																False
+Palms on Westheimer	False	1476										inactive - 7/24						False
+Parc500	True	1676		cityview	1665							Name change - City View to Parck500 - 2/28/2017, Parck500 to Parc500 3/3/17	${TODAY}					False
+Park at Abernathy Square	True	1631																False
+Park at Blanding	False	1561										removed 2/2/2017						False
+Park at Hurstbourne	True	1724																False
+Park at Johns Creek	True	1554											${TODAY}			${TODAY}		False
+Park at Kennesaw	True	1434																False
+Park at Peachtree Corners	True	1469															${TODAY}	False
+Park at Regency	False	1560										inactive - 6/6						False
+Park at Stone Creek	False	1477										inactive - 3/23/16						False
+Park at Towne Lake	True	1555											${TODAY}			${TODAY}		False
+Park at the Marketplace	True	1683																False
+Parks at Walnut, The	False	1183										Deactivated 12/1/16						False
+Pavilions at Arrowhead	False	1742																True
+Pavilions at Deer Chase	True	1542											${TODAY}			${TODAY}		False
+Pavilions at Pebble View	False	1465										deactivated 7/12						False
+Pavilions at Vantage Point	False	1464										deactivated 7/12						False
+Peanut Factory	True	1700											${TODAY}					False
+Pembrook Club	True	1404																False
+Perry Place	True	1714											${TODAY}					False
+Place at Greenway	True	1475																False
+Plantation Oaks	False	1018										Removed 4/28/17						False
+Pointe at the Foothills	True	1615																False
+Porterwood	True	1174													${TODAY}			False
+Portofino Senior Apartments	False	Portofino Senior Apartments																True
+Prairie Lakes	True	1703																False
+Prentiss Creek	True	1370																False
+Preserve at Dunwoody	False	1457										deactivated on 5/2						False
+Promenade Summer Trace	True	1440										Named changed from Summer Trace to Promenade at Summer Trace						False
+Promenade at Aloma	True	1611										Changed spelling of Alloma to Aloma						False
+Promenade at Belleair	True	1514		.belleai	1363								${TODAY}				${TODAY}	False
+Promenade at Edgewater	True	1453															${TODAY}	False
+Promenade at Mayport	True	1437																False
+Promenade at Ocala	True	1682																False
+Promenade at Uptown	True	1668		.uptown	uptown	1392						"Merged with new property codes. Name changed from ""Promenade at Uptown - Historical"""						False
+Promenade at Uptown (old)	False	0																False
+Promenade at Valley Creek	True	1592		.valley	1405													False
+Promenade at Valley Ridge	True	.valleyr		1488	1406													False
+Quail Hollow	False	1507										inactive - 3/23/16						False
+Radbourne Lake	True	1576																False
+Regatta Bay	True	1537											${TODAY}				${TODAY}	False
+Remington	False	1274										Deactivated 12/1/16						False
+Remington Ranch	False	1328										Deactivated 10/17/16						False
+Republic Deer Creek	True	1435																False
+Republic Woodlake	True	1395																False
+Reserve South	True	1636										Name change - [Newport Manor] - [Reserve South] 6/6/16						False
+Reserve at Hoffman Estates	True	1617																False
+Residence of North Dallas	False	1418										Inactive - sold						False
+Residences at CityCenter	True	1609										Update Centre to Center 11/4						False
+Retreat at the Park	False	45311		1540								Deactivated 5/11/16						False
+Riatta Ranch	True	1089																False
+Ridge, The	True	1420																False
+Ridgecrest	False	45317		1497								Deactivated 2/25/16-Sold						False
+River Oaks	True	1393																False
+River Ranch	False	1014										inactive 9/17						False
+River Vista	True	1667										Aspen Station to River Vista						False
+Rock Creek	True	1721											${TODAY}					False
+Rockledge	False	1752																True
+Runaway Bay	False	1508										inactive 3/23/16						False
+Rundberg West	True	1637																False
+Sabal Palm at Lake Buena Vista	True	1577										Named changed from Sabal Palm to Sabal Palm at Lake Buena Vista						False
+San Merano at Mirasol	True	1731																False
+Sandpiper	True	1729																False
+Seasons 704 Apartment Homes	True	1602										name change from Bayberry to Seasons 704 Apartment Homes						False
+Seasons on Chelsea	False	1493										inactive - 3/23/16						False
+Serena Vista	True	1650		1634	.serena													False
+Settler's Gate	False	45334		1479	1302	.settler						Removed 9/2						False
+Sevilla	False	1743																True
+Seville	True	1661																False
+Sierra Park	False	1544										"inactive 7/9 - Rename from ""Honey Creek"""						False
+Siesta Lago Condominiums	True	1253										Named changed from  Siesta Lago Condominium to Siesta Lago Condominiums						False
+Silverbrook	True	1524											${TODAY}				${TODAY}	False
+Solara at Mill Avenue	True	1674																False
+Somerset at the Crossing	True	1736										Activated 5/8/2017						False
+South College Gardens	True	1373																False
+South Point	False	1619										"inactive - received new property code ""1626"""						False
+Southpoint Reserve at Stoney Creek	True	1587										renamed Southpoint Reserve at Stoney Creek from Steeplechase						False
+St. Charles Place	True	1176													${TODAY}			False
+Stewart's Landing	True	1096													${TODAY}			False
+Stone Creek at Old Farm	True	1719																False
+Stone Crossing	False	1748																True
+Stone Hollow	True	1171													${TODAY}			False
+Stonecastle	True	1704											${TODAY}					False
+Stonecrossing East of Westchase	True	1461										Updated from The Pathway to Stonecrossing East of Westchase on 12/12/16					${TODAY}	False
+Stonecrossing of Westchase	True	1445																False
+Stonehaven Villas	True	1275													${TODAY}			False
+Stoneleigh on Kenswick	True	1468															${TODAY}	False
+Studio at 710	True	1710																False
+Summit @ 860	False	1621										aka Overlook Estates, Changed name from Summit at 860 to Summit @ 860; deactivated 4/21/2017						False
+Summit at Sabal Park, The	True	1563											${TODAY}			${TODAY}		False
+Sundance	True	1684		sundance									${TODAY}			${TODAY}		False
+TAVA Waters	True	1692										Changed from The Breakers to TAVA Waters on 3/15/17	${TODAY}					False
+Terrace Garden	False	1286										Deactivated as of 4/28/17						False
+Terrace at Butler	False	1419										Deactivated 4/28/2017						False
+Terraces at Perkins Rowe	True	1531											${TODAY}				${TODAY}	False
+Terraces at Perkins Rowe II	False	1605										Inactive - 3/28/16						False
+The Ashlar	True	1598																False
+The Bricks at Perimeter Center	True	1635										Name changed from Bricks at Perimeter Center to The Bricks at Perimeter Center						False
+The Canopy	True	1677																False
+The Carlyle	True	1740										Activated 5/24/2017	${TODAY}			${TODAY}		False
+The Colonnade	True	1687																False
+The Cottages of Savannah	False	1594										inactive 5/26						False
+The Crossings at Bramblewood	True	1415										Name changed from Bramblewood s/b The Crossings at Brambelwood						False
+The Flats WDM	True	1660											${TODAY}			${TODAY}		False
+The Gregory North	True	1639		eagle	1663							name changed to Eagle Landing from 1639					${TODAY}	False
+The Gregory South	True	watercr		1640	1664							name changed to The Gregory South from Watercrest					${TODAY}	False
+The Landings	False	1630										Deactivated 9/20/16						False
+The Meadows	False	1739																True
+The Meritage	True	1717																False
+The Piedmont at Ivy Meadow	True	1647										Name changed from 1647 Piedmont at Ivy Meadow to The Piedmont at Ivy Meadow						False
+The Pines	True	1699																False
+The Preserve at Osprey Lake	True	1733																False
+The Preserve at Terrell Mill	True	1593										"first financials on Feb17, was ""Barrington Mills"" then was ""Preserve at Terrell Mill"" back to BM"						False
+The Residences of Westover Hills	True	1608										Name changed from The Residences of Westover Hill to The Residences of Westover Hills						False
+The Retreat at Acadian Point	True	1626										Changed name from South Point Lafayette to The Retreat at Acadian Point						False
+Tidal Bluffs	True	1735										Activated 4/28/2017						False
+Tiger Manor	True	1376																False
+Tiger Manor II	True	1375																False
+Timber Creek	True	1567										"Renamed from ""Beacon Timber Creek"""						False
+Timber Oaks	True	1585										Expect first financials on Feb 17						False
+Timber Ridge	True	1078													${TODAY}			False
+Timberglen	True	1525											${TODAY}				${TODAY}	False
+Timberlinks at Denton	False	1499										Inactive - sold						False
+Toscana	False	1238										Deactivated 4/13/16						False
+Toscana Dallas	False	1526										Deactivated 4/5/17						False
+Towne Oaks South	True	1024													${TODAY}			False
+Tree House	True	1455															${TODAY}	False
+Trestles, The	True	1136													${TODAY}			False
+Triple Crown at Tates Creek	True	1656															${TODAY}	False
+Tuckahoe Creek	True	1400																False
+Tuscany Palms	False	1754																True
+Twelve 6 Ten At The Park	False	1590										name changed from McMillan Place to Twelve 6 Ten At The Park, property removed 4/27/2017						False
+Twenty5 Pelham	False	1511										renamed The Vintage to Twenty5 Pelham, inactive - 3/23/16						False
+University Edge	False	1588										Removed 2.2.16						False
+Valley Oaks	False	1206										Deactivated 2/25/16-Sold						False
+Venue at 8651	True	1623										"Changed name from ""Place at Vanderbilt"" 10/10/16"						False
+Veranda Estates	False	1528										bh no longer managed as of 5/19						False
+Veranda Knolls	False	1527										bh no longer managed as of 5/19						False
+Versailles	True	1600																False
+Vicino On The Lake	True	1697																False
+Views of Naperville, The	True	1487																False
+Views on Longcreek I, The	False	1512										inactive - 3/23/16						False
+Views on Longcreek II, The	False	1513										inactive - 3/23/16						False
+Views on Pelham, The	False	1510										inactive - 3/23/16						False
+Villa Espada	True	1654																False
+Village Green	False	1738																True
+Villages at Louetta	True	1402																False
+Villas on Briarcliff	False	1519										Removed 2.2.16						False
+Vinings Palisades	True	1417																False
+Wakonda	True	1448																False
+Walnut Bend - Dallas	False	1182										Deactivated 12/1/16						False
+Walnut Lake	True	1698																False
+West End at City Center	True	1734										Activated 4/28/2017						False
+West M	True	1681																False
+West Winds	False	1509										inactive - 3/23/16						False
+Weston Park	True	1252													${TODAY}			False
+Westpointe	True	1184													${TODAY}			False
+Westport on the River	False	1178										Removed 3/13/2017 - No longer managed by BH						False
+Whispering Lake	True	1603																False
+Whisperwood	False	1620										Removed 2.2.16						False
+Willeo Creek	True	1424																False
+Willow Gardens	True	1374																False
+Willow Grove	True	1550											${TODAY}			${TODAY}		False
+Willow Lake	True	1671										Reactivated 6/30  - not broken into two codes anymore						False
+Willow Lake I	False	1678										Deactivated 6/30/16						False
+Willow Lake II	False	1679										Deactivated 6/30/16						False
+Willowdale Crossing	False	1543										Deactivated 9/20/16						False
+Windscape of Naperville	True	1701		windscp										${TODAY}				False
+Wood Trail - Bryan	True	1088													${TODAY}			False
+Wood Trail - Tyler	True	1075													${TODAY}			False
+Woodbridge	True	1551											${TODAY}			${TODAY}		False
+Woodcrest Village	True	1625		1723								name change from Hampton Woods						False
+Woodhill	False	45314		1496								Deactivated 2/25/16-Sold						False
+Woodhollow	True	1033													${TODAY}			False
+Woodlands of Crest Hill, The	False	1486										Deactivated 2/25/16- Sold						False
+alexpt	False	alexpt-merged																False
+com122	False	com122																False
+com231	False	com231																False
+com301	False	com301																False
+i17	False	i17																True
+ms	False	ms																True
