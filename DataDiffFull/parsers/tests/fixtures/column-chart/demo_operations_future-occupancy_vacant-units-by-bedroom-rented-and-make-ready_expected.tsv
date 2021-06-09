@@ -1,0 +1,22 @@
+Studio:Not Ready	Rented	2.28136882129	#00cee6
+Studio:Not Ready	Unrented	11.9771863118	#218a8c
+Studio:Ready	Rented	2.85171102662	#00cee6
+Studio:Ready	Unrented	11.9771863118	#218a8c
+1 BR:Not Ready	Rented	47.9087452471	#00cee6
+1 BR:Not Ready	Unrented	73.0038022814	#218a8c
+1 BR:Ready	Rented	22.2433460076	#00cee6
+1 BR:Ready	Unrented	46.7680608365	#218a8c
+2 BR:Not Ready	Rented	67.8707224335	#00cee6
+2 BR:Not Ready	Unrented	61.0266159696	#218a8c
+2 BR:Ready	Rented	41.0646387833	#00cee6
+2 BR:Ready	Unrented	47.9087452471	#218a8c
+3 BR:Not Ready	Rented	27.9467680608	#00cee6
+3 BR:Not Ready	Unrented	18.2509505703	#218a8c
+3 BR:Ready	Rented	6.27376425856	#00cee6
+3 BR:Ready	Unrented	10.8365019011	#218a8c
+4+ BR:Ready	Rented	1.14068441065	#00cee6
+4+ BR:Ready	Unrented	0	N/A
+N\A:Not Ready	Rented	1.71102661597	#00cee6
+N\A:Not Ready	Unrented	5.13307984791	#218a8c
+N\A:Ready	Rented	0	N/A
+N\A:Ready	Unrented	2.28136882129	#218a8c

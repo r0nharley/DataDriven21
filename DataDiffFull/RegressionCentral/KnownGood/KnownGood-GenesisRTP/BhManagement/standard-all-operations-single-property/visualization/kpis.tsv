@@ -1,0 +1,44 @@
+kpi1:# Units	primary	0
+kpi1:# Units	secondary	NO_VALUE
+kpi2:Occupancy  Percent	primary	NO_VALUE
+kpi2:Occupancy  Percent	secondary	NO_VALUE
+kpi3:Vacant Units	primary	0
+kpi3:Vacant Units	secondary	NO_VALUE
+kpi4:Notice Units	primary	0
+kpi4:Notice Units	secondary	NO_VALUE
+kpi5:Avg Actual  Rent	primary	NO_VALUE
+kpi5:Avg Actual  Rent	secondary	NO_VALUE
+kpi6:Vacant Market Rent	primary	NO_VALUE
+kpi6:Vacant Market Rent	secondary	NO_VALUE
+kpi7:Loss to Lease	primary	NO_VALUE
+kpi7:Loss to Lease	secondary	NO_VALUE
+kpi8:Loss to Lease %	primary	NO_VALUE
+kpi8:Loss to Lease %	secondary	NO_VALUE
+kpi9:# of Delinquent Residents	primary	0
+kpi9:# of Delinquent Residents	secondary	NO_VALUE
+kpi10:Avg Outstanding Balance	primary	NO_VALUE
+kpi10:Avg Outstanding Balance	secondary	NO_VALUE
+kpi11:Delinquent % of Rent	primary	N\A
+kpi11:Delinquent % of Rent	secondary	NO_VALUE
+kpi12:Total Aged Balance	primary	NO_VALUE
+kpi12:Total Aged Balance	secondary	NO_VALUE
+kpi13:Future Occupancy %	primary	NO_VALUE
+kpi13:Future Occupancy %	secondary	NO_VALUE
+kpi14:Pending Move-Ins	primary	0
+kpi14:Pending Move-Ins	secondary	NO_VALUE
+kpi15:NTV Units	primary	0
+kpi15:NTV Units	secondary	NO_VALUE
+kpi16:Rented %	primary	N\A
+kpi16:Rented %	secondary	NO_VALUE
+kpi17:Vacant Units	primary	0
+kpi17:Vacant Units	secondary	NO_VALUE
+kpi18:Current Vacancy Cost	primary	NO_VALUE
+kpi18:Current Vacancy Cost	secondary	NO_VALUE
+kpi19:Avg Days Vacant	primary	N\A
+kpi19:Avg Days Vacant	secondary	N\A
+kpi20:Make Ready %	primary	N\A
+kpi20:Make Ready %	secondary	N\A
+kpi21:Avg Lease Term	primary	NO_VALUE
+kpi21:Avg Lease Term	secondary	NO_VALUE
+kpi22:Avg Months of Tenancy	primary	NO_VALUE
+kpi22:Avg Months of Tenancy	secondary	NO_VALUE

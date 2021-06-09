@@ -1,0 +1,11 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/python:2.7
+    working_directory:  ~/RobotFramework
+    steps:
+      - checkout
+      - run: sudo pip install -r requirements.txt
+      - run: pytest
+

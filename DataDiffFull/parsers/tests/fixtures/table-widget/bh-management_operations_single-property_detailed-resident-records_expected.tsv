@@ -1,0 +1,300 @@
+101	Resident ID	t2167900
+101	Resident Name	Denton, Jasmine
+101	Unit Type	a3uno
+101	Bed-Bath	1 X 1
+101	Unit SF	888.0
+101	Occupancy Status	Occ-No NTV
+101	Future Rented Status	N\A
+101	Lease Start	04/07/2017
+101	Lease End	04/06/2018
+101	Move-in	04/07/2017
+101	Actual Rent	863.0
+101	Loss to Lease	57.0
+101	Market Rent	920.0
+101	Lease Term	12.0
+101	Months of Tenancy	3.0
+102	Resident ID	t2136475
+102	Resident Name	Mangini, Matthew
+102	Unit Type	a3uno
+102	Bed-Bath	1 X 1
+102	Unit SF	888.0
+102	Occupancy Status	Occ-No NTV
+102	Future Rented Status	N\A
+102	Lease Start	05/27/2017
+102	Lease End	05/26/2018
+102	Move-in	06/27/2016
+102	Actual Rent	921.0
+102	Loss to Lease	4.0
+102	Market Rent	925.0
+102	Lease Term	12.0
+102	Months of Tenancy	13.0
+103	Resident ID	t1106402
+103	Resident Name	Parks, Steven
+103	Unit Type	a6no
+103	Bed-Bath	1 X 1
+103	Unit SF	908.0
+103	Occupancy Status	Occ-No NTV
+103	Future Rented Status	N\A
+103	Lease Start	06/17/2017
+103	Lease End	06/16/2018
+103	Move-in	06/17/2014
+103	Actual Rent	817.0
+103	Loss to Lease	48.0
+103	Market Rent	865.0
+103	Lease Term	12.0
+103	Months of Tenancy	37.0
+104	Resident ID	t2117867
+104	Resident Name	Cazeres, Jocelin
+104	Unit Type	a6uno
+104	Bed-Bath	1 X 1
+104	Unit SF	908.0
+104	Occupancy Status	Occ-No NTV
+104	Future Rented Status	N\A
+104	Lease Start	07/01/2016
+104	Lease End	06/30/2017
+104	Move-in	03/15/2016
+104	Actual Rent	983.0
+104	Loss to Lease	2.0
+104	Market Rent	985.0
+104	Lease Term	12.0
+104	Months of Tenancy	16.0
+105	Resident ID	t2175200
+105	Resident Name	Joy, Stephanie
+105	Unit Type	b2pno
+105	Bed-Bath	2 X 2
+105	Unit SF	1046.0
+105	Occupancy Status	Occ-No NTV
+105	Future Rented Status	N\A
+105	Lease Start	05/04/2017
+105	Lease End	05/03/2018
+105	Move-in	05/04/2017
+105	Actual Rent	940.0
+105	Loss to Lease	60.0
+105	Market Rent	1000.0
+105	Lease Term	12.0
+105	Months of Tenancy	3.0
+106	Resident ID	t1106405
+106	Resident Name	Aryeetey, Prince
+106	Unit Type	b2no
+106	Bed-Bath	2 X 2
+106	Unit SF	1046.0
+106	Occupancy Status	Occ-No NTV
+106	Future Rented Status	N\A
+106	Lease Start	06/19/2017
+106	Lease End	06/18/2018
+106	Move-in	04/19/2014
+106	Actual Rent	962.0
+106	Loss to Lease	-32.0
+106	Market Rent	930.0
+106	Lease Term	12.0
+106	Months of Tenancy	39.0
+107	Resident ID	tlq82980
+107	Resident Name	Lakisha Dotson
+107	Unit Type	b2uno
+107	Bed-Bath	2 X 2
+107	Unit SF	1067.0
+107	Occupancy Status	Occ-No NTV
+107	Future Rented Status	N\A
+107	Lease Start	05/25/2017
+107	Lease End	03/24/2018
+107	Move-in	05/25/2017
+107	Actual Rent	1153.0
+107	Loss to Lease	-108.0
+107	Market Rent	1045.0
+107	Lease Term	10.0
+107	Months of Tenancy	2.0
+108	Resident ID	N\A
+108	Resident Name	N\A
+108	Unit Type	b1uno
+108	Bed-Bath	2 X 2
+108	Unit SF	1067.0
+108	Occupancy Status	Vacant
+108	Future Rented Status	Unrented
+108	Lease Start	N\A
+108	Lease End	N\A
+108	Move-in	N\A
+108	Actual Rent	N\A
+108	Loss to Lease	N\A
+108	Market Rent	1080.0
+108	Lease Term	N\A
+108	Months of Tenancy	N\A
+109	Resident ID	t2054403
+109	Resident Name	Demetria Reid
+109	Unit Type	a3uno
+109	Bed-Bath	1 X 1
+109	Unit SF	888.0
+109	Occupancy Status	Occ-No NTV
+109	Future Rented Status	N\A
+109	Lease Start	08/04/2016
+109	Lease End	08/03/2017
+109	Move-in	08/04/2015
+109	Actual Rent	807.0
+109	Loss to Lease	118.0
+109	Market Rent	925.0
+109	Lease Term	12.0
+109	Months of Tenancy	24.0
+110	Resident ID	t2054950
+110	Resident Name	Barnum, Jordan
+110	Unit Type	a3uno
+110	Bed-Bath	1 X 1
+110	Unit SF	888.0
+110	Occupancy Status	Occ-NTV
+110	Future Rented Status	Rented
+110	Lease Start	N\A
+110	Lease End	N\A
+110	Move-in	08/24/2015
+110	Actual Rent	842.0
+110	Loss to Lease	78.0
+110	Market Rent	920.0
+110	Lease Term	N\A
+110	Months of Tenancy	23.0
+111	Resident ID	N\A
+111	Resident Name	N\A
+111	Unit Type	a6uno
+111	Bed-Bath	1 X 1
+111	Unit SF	908.0
+111	Occupancy Status	Vacant
+111	Future Rented Status	Unrented
+111	Lease Start	N\A
+111	Lease End	N\A
+111	Move-in	N\A
+111	Actual Rent	N\A
+111	Loss to Lease	N\A
+111	Market Rent	985.0
+111	Lease Term	N\A
+111	Months of Tenancy	N\A
+112	Resident ID	t1106410
+112	Resident Name	Love, Kimberly
+112	Unit Type	a6no
+112	Bed-Bath	1 X 1
+112	Unit SF	908.0
+112	Occupancy Status	Occ-No NTV
+112	Future Rented Status	N\A
+112	Lease Start	04/21/2017
+112	Lease End	04/20/2018
+112	Move-in	04/21/2014
+112	Actual Rent	825.0
+112	Loss to Lease	40.0
+112	Market Rent	865.0
+112	Lease Term	12.0
+112	Months of Tenancy	39.0
+113	Resident ID	t2019551
+113	Resident Name	Carl Booker
+113	Unit Type	a2no
+113	Bed-Bath	1 X 1
+113	Unit SF	776.0
+113	Occupancy Status	Occ-No NTV
+113	Future Rented Status	N\A
+113	Lease Start	04/07/2017
+113	Lease End	04/06/2018
+113	Move-in	03/07/2015
+113	Actual Rent	753.0
+113	Loss to Lease	42.0
+113	Market Rent	795.0
+113	Lease Term	12.0
+113	Months of Tenancy	28.0
+114	Resident ID	tle86722
+114	Resident Name	Erb, Katie
+114	Unit Type	a4uno
+114	Bed-Bath	1 X 1
+114	Unit SF	608.0
+114	Occupancy Status	Occ-No NTV
+114	Future Rented Status	N\A
+114	Lease Start	06/10/2017
+114	Lease End	06/09/2018
+114	Move-in	06/10/2016
+114	Actual Rent	829.0
+114	Loss to Lease	31.0
+114	Market Rent	860.0
+114	Lease Term	12.0
+114	Months of Tenancy	13.0
+115	Resident ID	N\A
+115	Resident Name	N\A
+115	Unit Type	a5uno
+115	Bed-Bath	1 X 1
+115	Unit SF	800.0
+115	Occupancy Status	Vacant
+115	Future Rented Status	Unrented
+115	Lease Start	N\A
+115	Lease End	N\A
+115	Move-in	N\A
+115	Actual Rent	N\A
+115	Loss to Lease	N\A
+115	Market Rent	890.0
+115	Lease Term	N\A
+115	Months of Tenancy	N\A
+116	Resident ID	t1106414
+116	Resident Name	Robert Reynolds
+116	Unit Type	a5no
+116	Bed-Bath	1 X 1
+116	Unit SF	800.0
+116	Occupancy Status	Occ-No NTV
+116	Future Rented Status	N\A
+116	Lease Start	04/16/2017
+116	Lease End	04/15/2018
+116	Move-in	03/10/2012
+116	Actual Rent	774.0
+116	Loss to Lease	26.0
+116	Market Rent	800.0
+116	Lease Term	12.0
+116	Months of Tenancy	64.0
+117	Resident ID	t2115824
+117	Resident Name	Fontanez, Jonathan
+117	Unit Type	A1no
+117	Bed-Bath	1 X 1
+117	Unit SF	624.0
+117	Occupancy Status	Occ-No NTV
+117	Future Rented Status	N\A
+117	Lease Start	04/25/2017
+117	Lease End	04/24/2018
+117	Move-in	04/25/2016
+117	Actual Rent	704.0
+117	Loss to Lease	46.0
+117	Market Rent	750.0
+117	Lease Term	12.0
+117	Months of Tenancy	15.0
+118	Resident ID	t2170513
+118	Resident Name	Hincapie, Shandi
+118	Unit Type	A1no
+118	Bed-Bath	1 X 1
+118	Unit SF	624.0
+118	Occupancy Status	Occ-No NTV
+118	Future Rented Status	N\A
+118	Lease Start	04/21/2017
+118	Lease End	04/20/2018
+118	Move-in	04/21/2017
+118	Actual Rent	703.0
+118	Loss to Lease	37.0
+118	Market Rent	740.0
+118	Lease Term	12.0
+118	Months of Tenancy	3.0
+119	Resident ID	t2003317
+119	Resident Name	Chelsea Williams
+119	Unit Type	a5no
+119	Bed-Bath	1 X 1
+119	Unit SF	800.0
+119	Occupancy Status	Occ-No NTV
+119	Future Rented Status	N\A
+119	Lease Start	02/10/2017
+119	Lease End	02/09/2018
+119	Move-in	01/10/2015
+119	Actual Rent	730.0
+119	Loss to Lease	65.0
+119	Market Rent	795.0
+119	Lease Term	12.0
+119	Months of Tenancy	30.0
+120	Resident ID	t1106418
+120	Resident Name	Phillip Barton
+120	Unit Type	a5no
+120	Bed-Bath	1 X 1
+120	Unit SF	800.0
+120	Occupancy Status	Occ-No NTV
+120	Future Rented Status	N\A
+120	Lease Start	03/02/2017
+120	Lease End	03/01/2018
+120	Move-in	12/22/2012
+120	Actual Rent	765.0
+120	Loss to Lease	50.0
+120	Market Rent	815.0
+120	Lease Term	12.0
+120	Months of Tenancy	55.0

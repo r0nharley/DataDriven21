@@ -1,0 +1,40 @@
+{
+  "slug": "leasing-rents-summary",
+  "type": "visualization",
+  "kpis": [],
+  "charts": [
+    {
+      "sortedItem": "Current Occupancy %",
+      "title": "Current Occupancy (Conditional Formatting: Red < Budgeted Occupancy, Green \u2265 Budgeted Occupancy)"
+    },
+    {
+      "sortedItem": "ATR %",
+      "title": "% of Total Units Available by Aging Period & Occupancy Status"
+    },
+    {
+      "sortedItem": "Conversion Ratio",
+      "title": "Conversion & Closing Ratio by Property (Ranked Low to High by Conversion Ratio)"
+    },
+    {
+      "sortedItem": "# of Move-Ins",
+      "title": "Leasing Source Performance - Ranked High to Low by % of Total Move-ins"
+    },
+    {
+      "sortedItem": null,
+      "title": "Rent Summary (Ranked High to Low by Rent PSF)"
+    },
+    {
+      "sortedItem": null,
+      "title": "% of Total Units Expiring - Next 2 Months"
+    },
+    {
+      "sortedItem": "> 30 Day Delinquent Balance as % of In-Place Rent",
+      "title": ">30 Day Delinquent Balance as a % of In-place Rent by Property"
+    },
+    {
+      "sortedItem": "Over 90 Days",
+      "title": "Outstanding Balance by Property & Aging Period (Ranked High to Low by Over 90 Day Balance)"
+    }
+  ],
+  "tables": []
+}

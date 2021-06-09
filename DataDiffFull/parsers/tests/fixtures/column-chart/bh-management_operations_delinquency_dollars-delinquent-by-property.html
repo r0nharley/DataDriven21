@@ -1,0 +1,222 @@
+<div class="rl-chart  chart-column" id="chart4" ng-switch-when="chart" config="config" filters="filters" ng-class="{ 'rl-highlight': showHighlight, 'rl-no-header': config.noHeader, 'rl-viz-sm': vizSize == 'sm',  'rl-viz-md': vizSize == 'md', 'rl-viz-lg': vizSize == 'lg' }" viz-size="vizSize">
+    <!-- ngIf: alertType -->
+    <!-- ngIf: loading -->
+    <!-- ngIf: !isEmpty -->
+    <div class="rl-viz-header" ng-if="!isEmpty">
+        <div class="rl-title rl-small-width" title="$ Delinquency by Property" ng-class="{ 'rl-small-width': showGlobalFiltersTooltip }">$ Delinquency by Property</div>
+        <!-- ngIf: chart && chart.description -->
+        <div class="fa fa-info rl-viz-header-icon rl-description-tooltip-icon" ng-if="chart &amp;&amp; chart.description" uib-tooltip-html="htmlDescriptionTooltip" tooltip-placement="auto bottom-left" tooltip-class="rl-viz-header-tooltip"></div>
+        <!-- end ngIf: chart && chart.description -->
+        <!-- ngIf: showGlobalFiltersTooltip -->
+        <div class="fa fa-globe rl-viz-header-icon rl-global-filters-icon" ng-if="showGlobalFiltersTooltip" uib-tooltip="Affects Global Filters" tooltip-placement="auto bottom-left" tooltip-class="rl-viz-header-tooltip"></div>
+        <!-- end ngIf: showGlobalFiltersTooltip -->
+        <!-- ngIf: showDragHandle() -->
+        <!-- ngIf: (chart && hasData) || (config().isPinboard && !loading) -->
+        <div class="rl-viz-dropdown" rl-window-resize="resetDropDownPosition()" ng-if="(chart &amp;&amp; hasData) || (config().isPinboard &amp;&amp; !loading)" export-image="exportImage" viz="config().viz" dashboard-filters="filters()" options-list="optionsList" is-pinboard="config().isPinboard">
+            <div class="rl-dropdown-menu btn-group rl-dropdown-viz-menu" ng-class="{ open: isOpen, 'rl-dropdown-header-menu': dropdownStyle() == 'header-menu', 'rl-dropdown-viz-menu': dropdownStyle() == 'viz-menu' }" dropdown-style="dropdownStyle" menu-alignment="menuAlignment" config="config" on-select="onOptionSelect">
+                <button class="btn btn-info dropdown-toggle" ng-click="toggleMenu()"><span ng-show="dropdownStyle() == 'header-menu'" class="ng-hide"><span class="caret"></span></span><span ng-show="dropdownStyle() == 'viz-menu'"><span class="fa fa-bars"></span></span>
+                </button>
+                <!-- ngIf: isOpen -->
+                <ul class="dropdown-menu rl-right" ng-class="{ 'rl-right': menuAlignment() == 'right' }">
+                    <!-- ngRepeat: option in config().options -->
+                    <li ng-repeat="option in config().options">
+                        <!-- ngIf: option.key !== 'addToPinboard' --><a ng-if="option.key !== 'addToPinboard'" ng-click="onOptionClick(option)" ng-disabled="option.isLoading" ng-mouseover="togglePinboardMenu(false)"><span class="pull-left">Save as Image</span><span class="pull-right fa fa-file-image-o" ng-class="option.isLoading? option.classLoading : option.classDefault"></span><div class="rl-clear"></div></a>
+                        <!-- end ngIf: option.key !== 'addToPinboard' -->
+                        <!-- ngIf: option.key === 'addToPinboard' -->
+                    </li>
+                    <!-- end ngRepeat: option in config().options -->
+                    <li ng-repeat="option in config().options">
+                        <!-- ngIf: option.key !== 'addToPinboard' --><a ng-if="option.key !== 'addToPinboard'" ng-click="onOptionClick(option)" ng-disabled="option.isLoading" ng-mouseover="togglePinboardMenu(false)"><span class="pull-left">Export to CSV</span><span class="pull-right fa fa-download" ng-class="option.isLoading? option.classLoading : option.classDefault"></span><div class="rl-clear"></div></a>
+                        <!-- end ngIf: option.key !== 'addToPinboard' -->
+                        <!-- ngIf: option.key === 'addToPinboard' -->
+                    </li>
+                    <!-- end ngRepeat: option in config().options -->
+                </ul>
+                <div class="rl-viz-dropdown-pinboard-submenu ng-hide" rl-window-resize="realignMenu()" ng-show="isPinboardSubmenuShown" viz="config().viz" visible="isPinboardSubmenuShown">
+                    <ul>
+                        <!-- ngRepeat: option in pinboardOptions -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- end ngIf: (chart && hasData) || (config().isPinboard && !loading) -->
+    </div>
+    <!-- end ngIf: !isEmpty -->
+    <!-- ngIf: !hasData && !loading && !alertType && !isEmpty -->
+    <!-- ngIf: isEmpty -->
+    <!-- ngIf: !isEmpty -->
+    <div class="rl-chart-content" ng-if="!isEmpty" data-highcharts-chart="6">
+        <div id="highcharts-896i13i-18" class="highcharts-container " style="position: relative; overflow: hidden; width: 1914px; height: 363px; text-align: left; line-height: normal; z-index: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+            <svg version="1.1" class="highcharts-root" style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Arial, Helvetica, sans-serif;font-size:12px;" xmlns="http://www.w3.org/2000/svg" width="1914" height="363">
+                <desc>Created with Highstock 5.0.6</desc>
+                <defs>
+                    <clipPath id="highcharts-896i13i-19">
+                        <rect x="0" y="0" width="1849" height="280" fill="none"></rect>
+                    </clipPath>
+                    <clipPath id="highcharts-896i13i-20">
+                        <rect x="0" y="0" width="1849" height="280" fill="none"></rect>
+                    </clipPath>
+                </defs>
+                <rect fill="#ffffff" class="highcharts-background" x="0" y="0" width="1914" height="363" rx="0" ry="0"></rect>
+                <rect fill="none" class="highcharts-plot-background" x="55" y="10" width="1849" height="280"></rect>
+                <g class="highcharts-grid highcharts-xaxis-grid ">
+                    <path fill="none" class="highcharts-grid-line" d="M 259.5 10 L 259.5 290" opacity="1"></path>
+                    <path fill="none" class="highcharts-grid-line" d="M 465.5 10 L 465.5 290" opacity="1"></path>
+                    <path fill="none" class="highcharts-grid-line" d="M 670.5 10 L 670.5 290" opacity="1"></path>
+                    <path fill="none" class="highcharts-grid-line" d="M 876.5 10 L 876.5 290" opacity="1"></path>
+                    <path fill="none" class="highcharts-grid-line" d="M 1081.5 10 L 1081.5 290" opacity="1"></path>
+                    <path fill="none" class="highcharts-grid-line" d="M 1287.5 10 L 1287.5 290" opacity="1"></path>
+                    <path fill="none" class="highcharts-grid-line" d="M 1492.5 10 L 1492.5 290" opacity="1"></path>
+                    <path fill="none" class="highcharts-grid-line" d="M 1698.5 10 L 1698.5 290" opacity="1"></path>
+                    <path fill="none" class="highcharts-grid-line" d="M 1903.5 10 L 1903.5 290" opacity="1"></path>
+                    <path fill="none" class="highcharts-grid-line" d="M 54.5 10 L 54.5 290" opacity="1"></path>
+                </g>
+                <g class="highcharts-grid highcharts-yaxis-grid ">
+                    <path fill="none" stroke="#D8D8D8" stroke-width="1" stroke-dasharray="1,3" class="highcharts-grid-line" d="M 55 290.5 L 1904 290.5" opacity="1"></path>
+                    <path fill="none" stroke="#D8D8D8" stroke-width="1" stroke-dasharray="1,3" class="highcharts-grid-line" d="M 55 234.5 L 1904 234.5" opacity="1"></path>
+                    <path fill="none" stroke="#D8D8D8" stroke-width="1" stroke-dasharray="1,3" class="highcharts-grid-line" d="M 55 178.5 L 1904 178.5" opacity="1"></path>
+                    <path fill="none" stroke="#D8D8D8" stroke-width="1" stroke-dasharray="1,3" class="highcharts-grid-line" d="M 55 122.5 L 1904 122.5" opacity="1"></path>
+                    <path fill="none" stroke="#D8D8D8" stroke-width="1" stroke-dasharray="1,3" class="highcharts-grid-line" d="M 55 66.5 L 1904 66.5" opacity="1"></path>
+                    <path fill="none" stroke="#D8D8D8" stroke-width="1" stroke-dasharray="1,3" class="highcharts-grid-line" d="M 55 9.5 L 1904 9.5" opacity="1"></path>
+                </g>
+                <rect fill="none" class="highcharts-plot-border" x="55" y="10" width="1849" height="280"></rect>
+                <g class="highcharts-axis highcharts-xaxis ">
+                    <path fill="none" class="highcharts-tick" stroke="#ccd6eb" stroke-width="1" d="M 259.5 290 L 259.5 300" opacity="1"></path>
+                    <path fill="none" class="highcharts-tick" stroke="#ccd6eb" stroke-width="1" d="M 465.5 290 L 465.5 300" opacity="1"></path>
+                    <path fill="none" class="highcharts-tick" stroke="#ccd6eb" stroke-width="1" d="M 670.5 290 L 670.5 300" opacity="1"></path>
+                    <path fill="none" class="highcharts-tick" stroke="#ccd6eb" stroke-width="1" d="M 876.5 290 L 876.5 300" opacity="1"></path>
+                    <path fill="none" class="highcharts-tick" stroke="#ccd6eb" stroke-width="1" d="M 1081.5 290 L 1081.5 300" opacity="1"></path>
+                    <path fill="none" class="highcharts-tick" stroke="#ccd6eb" stroke-width="1" d="M 1287.5 290 L 1287.5 300" opacity="1"></path>
+                    <path fill="none" class="highcharts-tick" stroke="#ccd6eb" stroke-width="1" d="M 1492.5 290 L 1492.5 300" opacity="1"></path>
+                    <path fill="none" class="highcharts-tick" stroke="#ccd6eb" stroke-width="1" d="M 1698.5 290 L 1698.5 300" opacity="1"></path>
+                    <path fill="none" class="highcharts-tick" stroke="#ccd6eb" stroke-width="1" d="M 1904.5 290 L 1904.5 300" opacity="1"></path>
+                    <path fill="none" class="highcharts-tick" stroke="#ccd6eb" stroke-width="1" d="M 54.5 290 L 54.5 300" opacity="1"></path>
+                    <path fill="none" class="highcharts-axis-line" stroke="#ccd6eb" stroke-width="1" d="M 55 290.5 L 1904 290.5"></path>
+                </g>
+                <g class="highcharts-axis highcharts-yaxis ">
+                    <path fill="none" class="highcharts-axis-line" d="M 55 10 L 55 290"></path>
+                </g>
+                <g class="highcharts-series-group">
+                    <g class="highcharts-series highcharts-series-0 highcharts-column-series highcharts-color-undefined highcharts-tracker" transform="translate(55,10) scale(1 1)" width="280" height="1849" clip-path="url(https://test.rentlytics.com/bh-management/bi/operations-delinquency/visualization#highcharts-896i13i-20)">
+                        <rect x="52.5" y="245.5" width="99" height="2" fill="#fc7570" class="highcharts-point" stroke="#ffffff" stroke-width="1"></rect>
+                        <rect x="258.5" y="247.5" width="99" height="0" fill="#fc7570" class="highcharts-point" stroke="#ffffff" stroke-width="1"></rect>
+                    </g>
+                    <g class="highcharts-markers highcharts-series-0 highcharts-column-series highcharts-color-undefined " transform="translate(55,10) scale(1 1)" width="280" height="1849" clip-path="none"></g>
+                    <g class="highcharts-series highcharts-series-1 highcharts-column-series highcharts-color-undefined highcharts-tracker" transform="translate(55,10) scale(1 1)" width="280" height="1849" clip-path="url(https://test.rentlytics.com/bh-management/bi/operations-delinquency/visualization#highcharts-896i13i-20)">
+                        <rect x="52.5" y="247.5" width="99" height="0" fill="#fbb755" class="highcharts-point" stroke="#ffffff" stroke-width="1"></rect>
+                        <rect x="258.5" y="247.5" width="99" height="12" fill="#fbb755" class="highcharts-point" stroke="#ffffff" stroke-width="1"></rect>
+                        <rect x="874.5" y="253.5" width="99" height="0" fill="#fbb755" class="highcharts-point" stroke="#ffffff" stroke-width="1"></rect>
+                        <rect x="1080.5" y="117.5" width="99" height="0" fill="#fbb755" class="highcharts-point" stroke="#ffffff" stroke-width="1"></rect>
+                        <rect x="1285.5" y="249.5" width="99" height="1" fill="#fbb755" class="highcharts-point" stroke="#ffffff" stroke-width="1"></rect>
+                        <rect x="1696.5" y="61.5" width="99" height="1" fill="#fbb755" class="highcharts-point" stroke="#ffffff" stroke-width="1"></rect>
+                    </g>
+                    <g class="highcharts-markers highcharts-series-1 highcharts-column-series highcharts-color-undefined " transform="translate(55,10) scale(1 1)" width="280" height="1849" clip-path="none"></g>
+                    <g class="highcharts-series highcharts-series-2 highcharts-column-series highcharts-color-undefined highcharts-tracker" transform="translate(55,10) scale(1 1)" width="280" height="1849" clip-path="url(https://test.rentlytics.com/bh-management/bi/operations-delinquency/visualization#highcharts-896i13i-20)">
+                        <rect x="52.5" y="247.5" width="99" height="10" fill="#9b9bd7" class="highcharts-point" stroke="#ffffff" stroke-width="1"></rect>
+                        <rect x="258.5" y="259.5" width="99" height="11" fill="#9b9bd7" class="highcharts-point" stroke="#ffffff" stroke-width="1"></rect>
+                        <rect x="669.5" y="273.5" width="99" height="1" fill="#9b9bd7" class="highcharts-point" stroke="#ffffff" stroke-width="1"></rect>
+                        <rect x="874.5" y="253.5" width="99" height="1" fill="#9b9bd7" class="highcharts-point" stroke="#ffffff" stroke-width="1"></rect>
+                        <rect x="1080.5" y="117.5" width="99" height="21" fill="#9b9bd7" class="highcharts-point" stroke="#ffffff" stroke-width="1"></rect>
+                        <rect x="1285.5" y="250.5" width="99" height="11" fill="#9b9bd7" class="highcharts-point" stroke="#ffffff" stroke-width="1"></rect>
+                        <rect x="1491.5" y="261.5" width="99" height="2" fill="#9b9bd7" class="highcharts-point" stroke="#ffffff" stroke-width="1"></rect>
+                        <rect x="1696.5" y="62.5" width="99" height="17" fill="#9b9bd7" class="highcharts-point" stroke="#ffffff" stroke-width="1"></rect>
+                    </g>
+                    <g class="highcharts-markers highcharts-series-2 highcharts-column-series highcharts-color-undefined " transform="translate(55,10) scale(1 1)" width="280" height="1849" clip-path="none"></g>
+                    <g class="highcharts-series highcharts-series-3 highcharts-column-series highcharts-color-undefined highcharts-tracker" transform="translate(55,10) scale(1 1)" width="280" height="1849" clip-path="url(https://test.rentlytics.com/bh-management/bi/operations-delinquency/visualization#highcharts-896i13i-20)">
+                        <rect x="52.5" y="257.5" width="99" height="23" fill="#6eda55" class="highcharts-point" stroke="#ffffff" stroke-width="1"></rect>
+                        <rect x="258.5" y="270.5" width="99" height="10" fill="#6eda55" class="highcharts-point" stroke="#ffffff" stroke-width="1"></rect>
+                        <rect x="463.5" y="278.5" width="99" height="2" fill="#6eda55" class="highcharts-point" stroke="#ffffff" stroke-width="1"></rect>
+                        <rect x="669.5" y="274.5" width="99" height="6" fill="#6eda55" class="highcharts-point" stroke="#ffffff" stroke-width="1"></rect>
+                        <rect x="874.5" y="254.5" width="99" height="26" fill="#6eda55" class="highcharts-point" stroke="#ffffff" stroke-width="1"></rect>
+                        <rect x="1080.5" y="138.5" width="99" height="142" fill="#6eda55" class="highcharts-point" stroke="#ffffff" stroke-width="1"></rect>
+                        <rect x="1285.5" y="261.5" width="99" height="19" fill="#6eda55" class="highcharts-point" stroke="#ffffff" stroke-width="1"></rect>
+                        <rect x="1491.5" y="263.5" width="99" height="17" fill="#6eda55" class="highcharts-point" stroke="#ffffff" stroke-width="1"></rect>
+                        <rect x="1696.5" y="79.5" width="99" height="201" fill="#6eda55" class="highcharts-point" stroke="#ffffff" stroke-width="1"></rect>
+                    </g>
+                    <g class="highcharts-markers highcharts-series-3 highcharts-column-series highcharts-color-undefined " transform="translate(55,10) scale(1 1)" width="280" height="1849" clip-path="none"></g>
+                </g>
+                <g class="highcharts-legend" transform="translate(729,323)">
+                    <rect fill="none" class="highcharts-legend-box" rx="0" ry="0" x="0" y="0" width="455" height="25" visibility="visible"></rect>
+                    <g>
+                        <g>
+                            <g class="highcharts-legend-item highcharts-column-series highcharts-color-undefined highcharts-series-0" transform="translate(8,3)">
+                                <text x="21" style="color:#333333;font-size:12px;font-weight:normal;cursor:pointer;fill:#333333;" text-anchor="start" y="15">
+                                    <tspan>Over 90 Days</tspan>
+                                </text>
+                                <rect x="2" y="4" width="12" height="12" fill="#fc7570" rx="6" ry="6" class="highcharts-point"></rect>
+                            </g>
+                            <g class="highcharts-legend-item highcharts-column-series highcharts-color-undefined highcharts-series-1" transform="translate(132.328125,3)">
+                                <text x="21" y="15" style="color:#333333;font-size:12px;font-weight:normal;cursor:pointer;fill:#333333;" text-anchor="start">
+                                    <tspan>61-90 Days</tspan>
+                                </text>
+                                <rect x="2" y="4" width="12" height="12" fill="#fbb755" rx="6" ry="6" class="highcharts-point"></rect>
+                            </g>
+                            <g class="highcharts-legend-item highcharts-column-series highcharts-color-undefined highcharts-series-2" transform="translate(246.859375,3)">
+                                <text x="21" y="15" style="color:#333333;font-size:12px;font-weight:normal;cursor:pointer;fill:#333333;" text-anchor="start">
+                                    <tspan>31-60 Days</tspan>
+                                </text>
+                                <rect x="2" y="4" width="12" height="12" fill="#9b9bd7" rx="6" ry="6" class="highcharts-point"></rect>
+                            </g>
+                            <g class="highcharts-legend-item highcharts-column-series highcharts-color-undefined highcharts-series-3" transform="translate(361.390625,3)">
+                                <text x="21" y="15" style="color:#333333;font-size:12px;font-weight:normal;cursor:pointer;fill:#333333;" text-anchor="start">
+                                    <tspan>0-30 Days</tspan>
+                                </text>
+                                <rect x="2" y="4" width="12" height="12" fill="#6eda55" rx="6" ry="6" class="highcharts-point"></rect>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+                <g class="highcharts-axis-labels highcharts-xaxis-labels ">
+                    <text x="157.72222222222223" style="color:#666666;cursor:default;font-size:11px;fill:#666666;width:200px;text-overflow:clip;" text-anchor="middle" transform="translate(0,0)" y="309" opacity="1">
+                        <tspan>Timberglen</tspan>
+                    </text>
+                    <text x="363.1666666666667" style="color:#666666;cursor:default;font-size:11px;fill:#666666;width:200px;text-overflow:clip;" text-anchor="middle" transform="translate(0,0)" y="309" opacity="1">
+                        <tspan>Oaks at Greenview, The</tspan>
+                    </text>
+                    <text x="568.6111111111111" style="color:#666666;cursor:default;font-size:11px;fill:#666666;width:200px;text-overflow:clip;" text-anchor="middle" transform="translate(0,0)" y="309" opacity="1">
+                        <tspan>Arbors at Tallwood</tspan>
+                    </text>
+                    <text x="774.0555555555557" style="color:#666666;cursor:default;font-size:11px;fill:#666666;width:200px;text-overflow:clip;" text-anchor="middle" transform="translate(0,0)" y="309" opacity="1">
+                        <tspan>Ansley Place</tspan>
+                    </text>
+                    <text x="979.5" style="color:#666666;cursor:default;font-size:11px;fill:#666666;width:200px;text-overflow:clip;" text-anchor="middle" transform="translate(0,0)" y="309" opacity="1">
+                        <tspan>Promenade at Belleair</tspan>
+                    </text>
+                    <text x="1184.9444444444446" style="color:#666666;cursor:default;font-size:11px;fill:#666666;width:200px;text-overflow:clip;" text-anchor="middle" transform="translate(0,0)" y="309" opacity="1">
+                        <tspan>Terraces at Perkins Rowe</tspan>
+                    </text>
+                    <text x="1390.388888888889" style="color:#666666;cursor:default;font-size:11px;fill:#666666;width:200px;text-overflow:clip;" text-anchor="middle" transform="translate(0,0)" y="309" opacity="1">
+                        <tspan>Brookhollow</tspan>
+                    </text>
+                    <text x="1595.8333333333335" style="color:#666666;cursor:default;font-size:11px;fill:#666666;width:200px;text-overflow:clip;" text-anchor="middle" transform="translate(0,0)" y="309" opacity="1">
+                        <tspan>Regatta Bay</tspan>
+                    </text>
+                    <text x="1801.2777777777778" style="color:#666666;cursor:default;font-size:11px;fill:#666666;width:200px;text-overflow:clip;" text-anchor="middle" transform="translate(0,0)" y="309" opacity="1">
+                        <tspan>Silverbrook</tspan>
+                    </text>
+                </g>
+                <g class="highcharts-axis-labels highcharts-yaxis-labels ">
+                    <text x="40" style="color:#666666;cursor:default;font-size:11px;fill:#666666;width:622px;text-overflow:clip;" text-anchor="end" transform="translate(0,0)" y="295" opacity="1">
+                        <tspan>$0</tspan>
+                    </text>
+                    <text x="40" style="color:#666666;cursor:default;font-size:11px;fill:#666666;width:622px;text-overflow:clip;" text-anchor="end" transform="translate(0,0)" y="239" opacity="1">
+                        <tspan>$5K</tspan>
+                    </text>
+                    <text x="40" style="color:#666666;cursor:default;font-size:11px;fill:#666666;width:622px;text-overflow:clip;" text-anchor="end" transform="translate(0,0)" y="183" opacity="1">
+                        <tspan>$10K</tspan>
+                    </text>
+                    <text x="40" style="color:#666666;cursor:default;font-size:11px;fill:#666666;width:622px;text-overflow:clip;" text-anchor="end" transform="translate(0,0)" y="127" opacity="1">
+                        <tspan>$15K</tspan>
+                    </text>
+                    <text x="40" style="color:#666666;cursor:default;font-size:11px;fill:#666666;width:622px;text-overflow:clip;" text-anchor="end" transform="translate(0,0)" y="71" opacity="1">
+                        <tspan>$20K</tspan>
+                    </text>
+                    <text x="40" style="color:#666666;cursor:default;font-size:11px;fill:#666666;width:622px;text-overflow:clip;" text-anchor="end" transform="translate(0,0)" y="15" opacity="1">
+                        <tspan>$25K</tspan>
+                    </text>
+                </g>
+            </svg>
+        </div>
+    </div>
+    <!-- end ngIf: !isEmpty -->
+</div>

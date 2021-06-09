@@ -1,0 +1,609 @@
+<div class="rl-table" id="table2" rl-window-resize="fixLayout(false)" ng-switch-when="table" config="config" filters="filters" ng-class="{ 'rl-highlight': showHighlight, 'rl-hide-padding': config.viz.isEmpty }">
+    <!-- ngIf: alertType -->
+    <!-- ngIf: loading -->
+    <!-- ngIf: !config().noHeader && !isEmpty -->
+    <div class="rl-table-header" ng-if="!config().noHeader &amp;&amp; !isEmpty">
+        <div class="rl-title" title="Units Listed as Not Ready With Make Ready Dates that are in the Past">Units Listed as Not Ready With Make Ready Dates that are in the Past</div>
+        <!-- ngIf: table && table.description -->
+        <div class="fa fa-info rl-viz-header-icon rl-description-tooltip-icon" ng-if="table &amp;&amp; table.description" uib-tooltip-html="htmlDescriptionTooltip" tooltip-placement="auto bottom-left" tooltip-class="rl-viz-header-tooltip"></div>
+        <!-- end ngIf: table && table.description -->
+        <!-- ngIf: showDragHandle() -->
+        <!-- ngIf: (table && hasData) || (config().isPinboard && !loading) -->
+        <div class="rl-viz-dropdown" rl-window-resize="resetDropDownPosition()" ng-if="(table &amp;&amp; hasData) || (config().isPinboard &amp;&amp; !loading)" export-image="exportImage" viz="config().viz" dashboard-filters="filters()" options-list="optionsList" sorting="sorting">
+            <div class="rl-dropdown-menu btn-group rl-dropdown-viz-menu" ng-class="{ open: isOpen, 'rl-dropdown-header-menu': dropdownStyle() == 'header-menu', 'rl-dropdown-viz-menu': dropdownStyle() == 'viz-menu' }" dropdown-style="dropdownStyle" menu-alignment="menuAlignment" config="config" on-select="onOptionSelect">
+                <button class="btn btn-info dropdown-toggle" ng-click="toggleMenu()"><span ng-show="dropdownStyle() == 'header-menu'" class="ng-hide"><span class="caret"></span></span><span ng-show="dropdownStyle() == 'viz-menu'"><span class="fa fa-bars"></span></span>
+                </button>
+                <!-- ngIf: isOpen -->
+                <ul class="dropdown-menu rl-right" ng-class="{ 'rl-right': menuAlignment() == 'right' }">
+                    <!-- ngRepeat: option in config().options -->
+                    <li ng-repeat="option in config().options">
+                        <!-- ngIf: option.key !== 'addToPinboard' --><a ng-if="option.key !== 'addToPinboard'" ng-click="onOptionClick(option)" ng-disabled="option.isLoading" ng-mouseover="togglePinboardMenu(false)"><span class="pull-left">Export to CSV</span><span class="pull-right fa fa-download" ng-class="option.isLoading? option.classLoading : option.classDefault"></span><div class="rl-clear"></div></a>
+                        <!-- end ngIf: option.key !== 'addToPinboard' -->
+                        <!-- ngIf: option.key === 'addToPinboard' -->
+                    </li>
+                    <!-- end ngRepeat: option in config().options -->
+                </ul>
+                <div class="rl-viz-dropdown-pinboard-submenu ng-hide" rl-window-resize="realignMenu()" ng-show="isPinboardSubmenuShown" viz="config().viz" visible="isPinboardSubmenuShown">
+                    <ul>
+                        <!-- ngRepeat: option in pinboardOptions -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- end ngIf: (table && hasData) || (config().isPinboard && !loading) -->
+    </div>
+    <!-- end ngIf: !config().noHeader && !isEmpty -->
+    <!-- ngIf: !hasData && !loading && !alertType && !isEmpty -->
+    <!-- ngIf: isEmpty -->
+    <!-- ngIf: hasData -->
+    <div class="rl-table-content" ng-if="hasData" ng-style="{ height: config().viz.tableHeight }">
+        <div class="rl-table-container" style="height: 663px; width: 843px;">
+            <div class="rl-left-container" style="height: 663px; width: 0px;">
+                <div class="rl-frozen-corner">
+                    <table style="width: 0px;">
+                        <colgroup>
+                            <!-- ngRepeat: col in table.columnWidths.frozenColumnWidths track by $index -->
+                        </colgroup>
+                        <tbody>
+                        <!-- ngRepeat: row in table.rows.frozenCorner | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.frozenCorner | limitTo:table.displayRowLimit" style="height: 42px;">
+                            <!-- ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.frozenCorner | limitTo:table.displayRowLimit -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="rl-frozen-columns" style="height: 620px;">
+                    <table style="width: 0px;">
+                        <colgroup>
+                            <!-- ngRepeat: col in table.columnWidths.frozenColumnWidths track by $index -->
+                        </colgroup>
+                        <tbody>
+                        <!-- ngRepeat: row in table.rows.frozenColumns | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.frozenColumns | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.frozenColumns | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.frozenColumns | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.frozenColumns | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.frozenColumns | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.frozenColumns | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.frozenColumns | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.frozenColumns | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.frozenColumns | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.frozenColumns | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.frozenColumns | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.frozenColumns | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.frozenColumns | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.frozenColumns | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.frozenColumns | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.frozenColumns | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.frozenColumns | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.frozenColumns | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.frozenColumns | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.frozenColumns | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.frozenColumns | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.frozenColumns | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.frozenColumns | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.frozenColumns | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.frozenColumns | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.frozenColumns | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.frozenColumns | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.frozenColumns | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.frozenColumns | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.frozenColumns | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.frozenColumns | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.frozenColumns | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.frozenColumns | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.frozenColumns | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.frozenColumns | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.frozenColumns | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.frozenColumns | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.frozenColumns | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.frozenColumns | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.frozenColumns | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.frozenColumns | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.frozenColumns | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.frozenColumns | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.frozenColumns | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.frozenColumns | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.frozenColumns | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.frozenColumns | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.frozenColumns | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.frozenColumns | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.frozenColumns | limitTo:table.displayRowLimit -->
+                        </tbody>
+                    </table>
+                    <div class="rl-bottom-gutter" style="height: 17px;"></div>
+                </div>
+            </div>
+            <div class="rl-right-container" style="left: 0px; width: 842px;">
+                <div class="rl-frozen-rows">
+                    <table style="width: 825px;">
+                        <colgroup>
+                            <!-- ngRepeat: col in table.columnWidths.dataColumnWidths track by $index -->
+                            <col ng-repeat="col in table.columnWidths.dataColumnWidths track by $index" style="width: 194px;">
+                            <!-- end ngRepeat: col in table.columnWidths.dataColumnWidths track by $index -->
+                            <col ng-repeat="col in table.columnWidths.dataColumnWidths track by $index" style="width: 89px;">
+                            <!-- end ngRepeat: col in table.columnWidths.dataColumnWidths track by $index -->
+                            <col ng-repeat="col in table.columnWidths.dataColumnWidths track by $index" style="width: 150px;">
+                            <!-- end ngRepeat: col in table.columnWidths.dataColumnWidths track by $index -->
+                            <col ng-repeat="col in table.columnWidths.dataColumnWidths track by $index" style="width: 150px;">
+                            <!-- end ngRepeat: col in table.columnWidths.dataColumnWidths track by $index -->
+                            <col ng-repeat="col in table.columnWidths.dataColumnWidths track by $index" style="width: 125px;">
+                            <!-- end ngRepeat: col in table.columnWidths.dataColumnWidths track by $index -->
+                        </colgroup>
+                        <tbody>
+                        <!-- ngRepeat: row in table.rows.frozenRows | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.frozenRows | limitTo:table.displayRowLimit" style="height: 42px;">
+                            <!-- ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" ng-click="onSortableCellClick(cell)" class="rl-sortable">Property
+                                <div class="rl-caret"><i class="fa fa-caret-down ng-hide" ng-show="cell.sort == 'desc'"></i><i class="fa fa-caret-up ng-hide" ng-show="cell.sort == 'asc'"></i>
+                                </div>
+                            </td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" ng-click="onSortableCellClick(cell)" class="rl-sortable">Unit
+                                <div class="rl-caret"><i class="fa fa-caret-down ng-hide" ng-show="cell.sort == 'desc'"></i><i class="fa fa-caret-up ng-hide" ng-show="cell.sort == 'asc'"></i>
+                                </div>
+                            </td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" ng-click="onSortableCellClick(cell)" class="rl-sortable">PMS Make Ready Status
+                                <div class="rl-caret"><i class="fa fa-caret-down ng-hide" ng-show="cell.sort == 'desc'"></i><i class="fa fa-caret-up ng-hide" ng-show="cell.sort == 'asc'"></i>
+                                </div>
+                            </td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" ng-click="onSortableCellClick(cell)" class="rl-sortable">Listed Make Ready Date
+                                <div class="rl-caret"><i class="fa fa-caret-down ng-hide" ng-show="cell.sort == 'desc'"></i><i class="fa fa-caret-up ng-hide" ng-show="cell.sort == 'asc'"></i>
+                                </div>
+                            </td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" ng-click="onSortableCellClick(cell)" class="rl-sortable">Days Vacant
+                                <div class="rl-caret"><i class="fa fa-caret-down ng-hide" ng-show="cell.sort == 'desc'"></i><i class="fa fa-caret-up ng-hide" ng-show="cell.sort == 'asc'"></i>
+                                </div>
+                            </td>
+                            <!-- end ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.frozenRows | limitTo:table.displayRowLimit -->
+                        </tbody>
+                    </table>
+                    <div class="rl-right-gutter" style="width: 17px; top: 0px; left: 825px; height: 43px;"></div>
+                </div>
+                <div class="rl-scrollable-table" style="height: 620px;">
+                    <table style="width: 825px;">
+                        <colgroup>
+                            <!-- ngRepeat: col in table.columnWidths.dataColumnWidths track by $index -->
+                            <col ng-repeat="col in table.columnWidths.dataColumnWidths track by $index" style="width: 194px;">
+                            <!-- end ngRepeat: col in table.columnWidths.dataColumnWidths track by $index -->
+                            <col ng-repeat="col in table.columnWidths.dataColumnWidths track by $index" style="width: 89px;">
+                            <!-- end ngRepeat: col in table.columnWidths.dataColumnWidths track by $index -->
+                            <col ng-repeat="col in table.columnWidths.dataColumnWidths track by $index" style="width: 150px;">
+                            <!-- end ngRepeat: col in table.columnWidths.dataColumnWidths track by $index -->
+                            <col ng-repeat="col in table.columnWidths.dataColumnWidths track by $index" style="width: 150px;">
+                            <!-- end ngRepeat: col in table.columnWidths.dataColumnWidths track by $index -->
+                            <col ng-repeat="col in table.columnWidths.dataColumnWidths track by $index" style="width: 125px;">
+                            <!-- end ngRepeat: col in table.columnWidths.dataColumnWidths track by $index -->
+                        </colgroup>
+                        <tbody>
+                        <!-- ngRepeat: row in table.rows.dataCells | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.dataCells | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Brookhollow</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">261</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Not Ready</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">04/18/2016</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">70</td>
+                            <!-- end ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.dataCells | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.dataCells | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Triple Crown at Tates Creek</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">295</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Not Ready</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">05/10/2016</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">58</td>
+                            <!-- end ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.dataCells | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.dataCells | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Silverbrook</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">13113</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Not Ready</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">05/10/2016</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">179</td>
+                            <!-- end ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.dataCells | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.dataCells | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Triple Crown at Tates Creek</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">075</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Not Ready</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">05/10/2016</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">58</td>
+                            <!-- end ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.dataCells | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.dataCells | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Triple Crown at Tates Creek</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">282</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Not Ready</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">05/12/2016</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">56</td>
+                            <!-- end ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.dataCells | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.dataCells | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Triple Crown at Tates Creek</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">269</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Not Ready</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">05/12/2016</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">56</td>
+                            <!-- end ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.dataCells | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.dataCells | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Triple Crown at Tates Creek</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">265</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Not Ready</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">05/12/2016</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">56</td>
+                            <!-- end ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.dataCells | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.dataCells | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Triple Crown at Tates Creek</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">272</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Not Ready</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">05/12/2016</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">56</td>
+                            <!-- end ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.dataCells | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.dataCells | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Triple Crown at Tates Creek</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">271</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Not Ready</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">05/12/2016</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">56</td>
+                            <!-- end ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.dataCells | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.dataCells | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Regatta Bay</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">0134</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Not Ready</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">05/20/2016</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">48</td>
+                            <!-- end ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.dataCells | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.dataCells | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Triple Crown at Tates Creek</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">096</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Not Ready</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">05/21/2016</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">47</td>
+                            <!-- end ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.dataCells | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.dataCells | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Triple Crown at Tates Creek</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">014</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Not Ready</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">05/23/2016</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">45</td>
+                            <!-- end ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.dataCells | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.dataCells | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Triple Crown at Tates Creek</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">268</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Not Ready</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">05/23/2016</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">45</td>
+                            <!-- end ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.dataCells | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.dataCells | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Triple Crown at Tates Creek</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">049</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Not Ready</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">05/26/2016</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">42</td>
+                            <!-- end ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.dataCells | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.dataCells | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Regatta Bay</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">0635</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Not Ready</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">05/28/2016</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">40</td>
+                            <!-- end ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.dataCells | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.dataCells | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Terraces at Perkins Rowe</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">2029</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Not Ready</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">05/29/2016</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">84</td>
+                            <!-- end ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.dataCells | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.dataCells | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Brookhollow</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">253</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Not Ready</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">05/30/2016</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">28</td>
+                            <!-- end ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.dataCells | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.dataCells | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Brookhollow</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">258</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Not Ready</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">06/02/2016</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">25</td>
+                            <!-- end ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.dataCells | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.dataCells | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Triple Crown at Tates Creek</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">015</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Not Ready</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">06/02/2016</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">35</td>
+                            <!-- end ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.dataCells | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.dataCells | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Promenade at Belleair</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">01-202</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Not Ready</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">06/07/2016</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">30</td>
+                            <!-- end ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.dataCells | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.dataCells | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Terraces at Perkins Rowe</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">2016</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Not Ready</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">06/10/2016</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">300</td>
+                            <!-- end ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.dataCells | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.dataCells | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Triple Crown at Tates Creek</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">007</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Not Ready</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">06/10/2016</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">27</td>
+                            <!-- end ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.dataCells | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.dataCells | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Triple Crown at Tates Creek</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">061</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Not Ready</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">06/10/2016</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">27</td>
+                            <!-- end ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.dataCells | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.dataCells | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Triple Crown at Tates Creek</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">004</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Not Ready</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">06/10/2016</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">27</td>
+                            <!-- end ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.dataCells | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.dataCells | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Triple Crown at Tates Creek</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">050</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Not Ready</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">06/11/2016</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">26</td>
+                            <!-- end ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.dataCells | limitTo:table.displayRowLimit -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end ngIf: hasData -->
+    <!-- ngIf: hasData && pages.length > 1 -->
+    <div class="rl-table-pagination" ng-if="hasData &amp;&amp; pages.length > 1">
+        <div class="rl-row-indicator">Rows 1 - 25
+            <!-- ngIf: table.hasTotalPageCount -->
+        </div><a ng-click="onPageClick(null, 'first')">&lt;&lt;</a><a ng-click="onPageClick(null, 'previous')">&lt;</a>
+        <!-- ngRepeat: page in pages --><a ng-repeat="page in pages" ng-click="onPageClick(page)" ng-class="{ 'rl-selected': page == currentPage }" class="rl-selected">1</a>
+        <!-- end ngRepeat: page in pages --><a ng-repeat="page in pages" ng-click="onPageClick(page)" ng-class="{ 'rl-selected': page == currentPage }" class="">2</a>
+        <!-- end ngRepeat: page in pages --><a ng-repeat="page in pages" ng-click="onPageClick(page)" ng-class="{ 'rl-selected': page == currentPage }">3</a>
+        <!-- end ngRepeat: page in pages --><a ng-repeat="page in pages" ng-click="onPageClick(page)" ng-class="{ 'rl-selected': page == currentPage }">4</a>
+        <!-- end ngRepeat: page in pages --><a ng-repeat="page in pages" ng-click="onPageClick(page)" ng-class="{ 'rl-selected': page == currentPage }">5</a>
+        <!-- end ngRepeat: page in pages --><a ng-repeat="page in pages" ng-click="onPageClick(page)" ng-class="{ 'rl-selected': page == currentPage }">6</a>
+        <!-- end ngRepeat: page in pages --><a ng-repeat="page in pages" ng-click="onPageClick(page)" ng-class="{ 'rl-selected': page == currentPage }">7</a>
+        <!-- end ngRepeat: page in pages --><a ng-click="onPageClick(null, 'next')">&gt;</a>
+        <!-- ngIf: table.pagination.numberOfPages -->
+    </div>
+    <!-- end ngIf: hasData && pages.length > 1 -->
+</div>

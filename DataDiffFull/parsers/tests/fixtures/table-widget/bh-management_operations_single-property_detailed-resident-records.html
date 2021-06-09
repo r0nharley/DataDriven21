@@ -1,0 +1,1062 @@
+<div class="rl-table" id="table01" rl-window-resize="fixLayout(false)" ng-switch-when="table" config="config" filters="filters" ng-class="{ 'rl-highlight': showHighlight, 'rl-hide-padding': config.viz.isEmpty }">
+    <!-- ngIf: alertType -->
+    <!-- ngIf: loading -->
+    <!-- ngIf: !config().noHeader && !isEmpty -->
+    <div class="rl-table-header" ng-if="!config().noHeader &amp;&amp; !isEmpty">
+        <div class="rl-title" title="Detailed Resident Records">Detailed Resident Records</div>
+        <!-- ngIf: table && table.description -->
+        <!-- ngIf: showDragHandle() -->
+        <!-- ngIf: (table && hasData) || (config().isPinboard && !loading) -->
+        <div class="rl-viz-dropdown" rl-window-resize="resetDropDownPosition()" ng-if="(table &amp;&amp; hasData) || (config().isPinboard &amp;&amp; !loading)" export-image="exportImage" viz="config().viz" dashboard-filters="filters()" options-list="optionsList" sorting="sorting">
+            <div class="rl-dropdown-menu btn-group rl-dropdown-viz-menu" ng-class="{ open: isOpen, 'rl-dropdown-header-menu': dropdownStyle() == 'header-menu', 'rl-dropdown-viz-menu': dropdownStyle() == 'viz-menu' }" dropdown-style="dropdownStyle" menu-alignment="menuAlignment" config="config" on-select="onOptionSelect">
+                <button class="btn btn-info dropdown-toggle" ng-click="toggleMenu()"><span ng-show="dropdownStyle() == 'header-menu'" class="ng-hide"><span class="caret"></span></span><span ng-show="dropdownStyle() == 'viz-menu'"><span class="fa fa-bars"></span></span>
+                </button>
+                <!-- ngIf: isOpen -->
+                <ul class="dropdown-menu rl-right" ng-class="{ 'rl-right': menuAlignment() == 'right' }">
+                    <!-- ngRepeat: option in config().options -->
+                    <li ng-repeat="option in config().options">
+                        <!-- ngIf: option.key !== 'addToPinboard' -->
+                        <!-- ngIf: option.key === 'addToPinboard' --><a ng-if="option.key === 'addToPinboard'" ng-class="{ 'rl-open': isPinboardSubmenuShown }" ng-mouseover="togglePinboardMenu(true)"><span class="pull-left">Pinboards</span><span class="pull-right fa fa-thumb-tack fa-rotate-36" ng-class="option.classDefault"></span><div class="rl-clear"></div></a>
+                        <!-- end ngIf: option.key === 'addToPinboard' -->
+                    </li>
+                    <!-- end ngRepeat: option in config().options -->
+                    <li ng-repeat="option in config().options">
+                        <!-- ngIf: option.key !== 'addToPinboard' --><a ng-if="option.key !== 'addToPinboard'" ng-click="onOptionClick(option)" ng-disabled="option.isLoading" ng-mouseover="togglePinboardMenu(false)"><span class="pull-left">Export to CSV</span><span class="pull-right fa fa-download" ng-class="option.isLoading? option.classLoading : option.classDefault"></span><div class="rl-clear"></div></a>
+                        <!-- end ngIf: option.key !== 'addToPinboard' -->
+                        <!-- ngIf: option.key === 'addToPinboard' -->
+                    </li>
+                    <!-- end ngRepeat: option in config().options -->
+                </ul>
+                <div class="rl-viz-dropdown-pinboard-submenu ng-hide" rl-window-resize="realignMenu()" ng-show="isPinboardSubmenuShown" viz="config().viz" visible="isPinboardSubmenuShown">
+                    <ul>
+                        <!-- ngRepeat: option in pinboardOptions -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- end ngIf: (table && hasData) || (config().isPinboard && !loading) -->
+    </div>
+    <!-- end ngIf: !config().noHeader && !isEmpty -->
+    <!-- ngIf: !hasData && !loading && !alertType && !isEmpty -->
+    <!-- ngIf: isEmpty -->
+    <!-- ngIf: hasData -->
+    <div class="rl-table-content" ng-if="hasData" ng-style="{ height: config().viz.tableHeight }">
+        <div class="rl-table-container" style="height: 561px; width: 1677px;">
+            <div class="rl-left-container" style="height: 561px; width: 0px;">
+                <div class="rl-frozen-corner">
+                    <table style="width: 0px;">
+                        <colgroup>
+                            <!-- ngRepeat: col in table.columnWidths.frozenColumnWidths track by $index -->
+                        </colgroup>
+                        <tbody>
+                        <!-- ngRepeat: row in table.rows.frozenCorner | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.frozenCorner | limitTo:table.displayRowLimit" style="height: 60px;">
+                            <!-- ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.frozenCorner | limitTo:table.displayRowLimit -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="rl-frozen-columns" style="height: 500px;">
+                    <table style="width: 0px;">
+                        <colgroup>
+                            <!-- ngRepeat: col in table.columnWidths.frozenColumnWidths track by $index -->
+                        </colgroup>
+                        <tbody>
+                        <!-- ngRepeat: row in table.rows.frozenColumns | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.frozenColumns | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.frozenColumns | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.frozenColumns | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.frozenColumns | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.frozenColumns | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.frozenColumns | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.frozenColumns | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.frozenColumns | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.frozenColumns | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.frozenColumns | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.frozenColumns | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.frozenColumns | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.frozenColumns | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.frozenColumns | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.frozenColumns | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.frozenColumns | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.frozenColumns | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.frozenColumns | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.frozenColumns | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.frozenColumns | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.frozenColumns | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.frozenColumns | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.frozenColumns | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.frozenColumns | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.frozenColumns | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.frozenColumns | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.frozenColumns | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.frozenColumns | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.frozenColumns | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.frozenColumns | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.frozenColumns | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.frozenColumns | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.frozenColumns | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.frozenColumns | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.frozenColumns | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.frozenColumns | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.frozenColumns | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.frozenColumns | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.frozenColumns | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.frozenColumns | limitTo:table.displayRowLimit -->
+                        </tbody>
+                    </table>
+                    <div class="rl-bottom-gutter" style="height: 17px;"></div>
+                </div>
+            </div>
+            <div class="rl-right-container" style="left: 0px; width: 1676px;">
+                <div class="rl-frozen-rows">
+                    <table style="width: 1659px;">
+                        <colgroup>
+                            <!-- ngRepeat: col in table.columnWidths.dataColumnWidths track by $index -->
+                            <col ng-repeat="col in table.columnWidths.dataColumnWidths track by $index" style="width: 86px;">
+                            <!-- end ngRepeat: col in table.columnWidths.dataColumnWidths track by $index -->
+                            <col ng-repeat="col in table.columnWidths.dataColumnWidths track by $index" style="width: 92px;">
+                            <!-- end ngRepeat: col in table.columnWidths.dataColumnWidths track by $index -->
+                            <col ng-repeat="col in table.columnWidths.dataColumnWidths track by $index" style="width: 149px;">
+                            <!-- end ngRepeat: col in table.columnWidths.dataColumnWidths track by $index -->
+                            <col ng-repeat="col in table.columnWidths.dataColumnWidths track by $index" style="width: 86px;">
+                            <!-- end ngRepeat: col in table.columnWidths.dataColumnWidths track by $index -->
+                            <col ng-repeat="col in table.columnWidths.dataColumnWidths track by $index" style="width: 86px;">
+                            <!-- end ngRepeat: col in table.columnWidths.dataColumnWidths track by $index -->
+                            <col ng-repeat="col in table.columnWidths.dataColumnWidths track by $index" style="width: 86px;">
+                            <!-- end ngRepeat: col in table.columnWidths.dataColumnWidths track by $index -->
+                            <col ng-repeat="col in table.columnWidths.dataColumnWidths track by $index" style="width: 105px;">
+                            <!-- end ngRepeat: col in table.columnWidths.dataColumnWidths track by $index -->
+                            <col ng-repeat="col in table.columnWidths.dataColumnWidths track by $index" style="width: 86px;">
+                            <!-- end ngRepeat: col in table.columnWidths.dataColumnWidths track by $index -->
+                            <col ng-repeat="col in table.columnWidths.dataColumnWidths track by $index" style="width: 101px;">
+                            <!-- end ngRepeat: col in table.columnWidths.dataColumnWidths track by $index -->
+                            <col ng-repeat="col in table.columnWidths.dataColumnWidths track by $index" style="width: 95px;">
+                            <!-- end ngRepeat: col in table.columnWidths.dataColumnWidths track by $index -->
+                            <col ng-repeat="col in table.columnWidths.dataColumnWidths track by $index" style="width: 94px;">
+                            <!-- end ngRepeat: col in table.columnWidths.dataColumnWidths track by $index -->
+                            <col ng-repeat="col in table.columnWidths.dataColumnWidths track by $index" style="width: 86px;">
+                            <!-- end ngRepeat: col in table.columnWidths.dataColumnWidths track by $index -->
+                            <col ng-repeat="col in table.columnWidths.dataColumnWidths track by $index" style="width: 86px;">
+                            <!-- end ngRepeat: col in table.columnWidths.dataColumnWidths track by $index -->
+                            <col ng-repeat="col in table.columnWidths.dataColumnWidths track by $index" style="width: 86px;">
+                            <!-- end ngRepeat: col in table.columnWidths.dataColumnWidths track by $index -->
+                            <col ng-repeat="col in table.columnWidths.dataColumnWidths track by $index" style="width: 86px;">
+                            <!-- end ngRepeat: col in table.columnWidths.dataColumnWidths track by $index -->
+                            <col ng-repeat="col in table.columnWidths.dataColumnWidths track by $index" style="width: 88px;">
+                            <!-- end ngRepeat: col in table.columnWidths.dataColumnWidths track by $index -->
+                        </colgroup>
+                        <tbody>
+                        <!-- ngRepeat: row in table.rows.frozenRows | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.frozenRows | limitTo:table.displayRowLimit" style="height: 60px;">
+                            <!-- ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" ng-click="onSortableCellClick(cell)" class="rl-sortable">Unit
+                                <div class="rl-caret"><i class="fa fa-caret-down ng-hide" ng-show="cell.sort == 'desc'"></i><i class="fa fa-caret-up ng-hide" ng-show="cell.sort == 'asc'"></i>
+                                </div>
+                            </td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" ng-click="onSortableCellClick(cell)" class="rl-sortable">Resident ID
+                                <div class="rl-caret"><i class="fa fa-caret-down ng-hide" ng-show="cell.sort == 'desc'"></i><i class="fa fa-caret-up ng-hide" ng-show="cell.sort == 'asc'"></i>
+                                </div>
+                            </td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" ng-click="onSortableCellClick(cell)" class="rl-sortable">Resident Name
+                                <div class="rl-caret"><i class="fa fa-caret-down ng-hide" ng-show="cell.sort == 'desc'"></i><i class="fa fa-caret-up ng-hide" ng-show="cell.sort == 'asc'"></i>
+                                </div>
+                            </td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" ng-click="onSortableCellClick(cell)" class="rl-sortable">Unit Type
+                                <div class="rl-caret"><i class="fa fa-caret-down ng-hide" ng-show="cell.sort == 'desc'"></i><i class="fa fa-caret-up ng-hide" ng-show="cell.sort == 'asc'"></i>
+                                </div>
+                            </td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" ng-click="onSortableCellClick(cell)" class="rl-sortable">Bed-Bath
+                                <div class="rl-caret"><i class="fa fa-caret-down ng-hide" ng-show="cell.sort == 'desc'"></i><i class="fa fa-caret-up ng-hide" ng-show="cell.sort == 'asc'"></i>
+                                </div>
+                            </td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" ng-click="onSortableCellClick(cell)" class="rl-sortable">Unit SF
+                                <div class="rl-caret"><i class="fa fa-caret-down ng-hide" ng-show="cell.sort == 'desc'"></i><i class="fa fa-caret-up ng-hide" ng-show="cell.sort == 'asc'"></i>
+                                </div>
+                            </td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" ng-click="onSortableCellClick(cell)" class="rl-sortable">Occupancy Status
+                                <div class="rl-caret"><i class="fa fa-caret-down ng-hide" ng-show="cell.sort == 'desc'"></i><i class="fa fa-caret-up ng-hide" ng-show="cell.sort == 'asc'"></i>
+                                </div>
+                            </td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" ng-click="onSortableCellClick(cell)" class="rl-sortable">Future Rented Status
+                                <div class="rl-caret"><i class="fa fa-caret-down ng-hide" ng-show="cell.sort == 'desc'"></i><i class="fa fa-caret-up ng-hide" ng-show="cell.sort == 'asc'"></i>
+                                </div>
+                            </td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" ng-click="onSortableCellClick(cell)" class="rl-sortable">Lease Start
+                                <div class="rl-caret"><i class="fa fa-caret-down ng-hide" ng-show="cell.sort == 'desc'"></i><i class="fa fa-caret-up ng-hide" ng-show="cell.sort == 'asc'"></i>
+                                </div>
+                            </td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" ng-click="onSortableCellClick(cell)" class="rl-sortable">Lease End
+                                <div class="rl-caret"><i class="fa fa-caret-down ng-hide" ng-show="cell.sort == 'desc'"></i><i class="fa fa-caret-up ng-hide" ng-show="cell.sort == 'asc'"></i>
+                                </div>
+                            </td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" ng-click="onSortableCellClick(cell)" class="rl-sortable">Move-in
+                                <div class="rl-caret"><i class="fa fa-caret-down ng-hide" ng-show="cell.sort == 'desc'"></i><i class="fa fa-caret-up ng-hide" ng-show="cell.sort == 'asc'"></i>
+                                </div>
+                            </td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" ng-click="onSortableCellClick(cell)" class="rl-sortable">Actual Rent
+                                <div class="rl-caret"><i class="fa fa-caret-down ng-hide" ng-show="cell.sort == 'desc'"></i><i class="fa fa-caret-up ng-hide" ng-show="cell.sort == 'asc'"></i>
+                                </div>
+                            </td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" ng-click="onSortableCellClick(cell)" class="rl-sortable">Loss to Lease
+                                <div class="rl-caret"><i class="fa fa-caret-down ng-hide" ng-show="cell.sort == 'desc'"></i><i class="fa fa-caret-up ng-hide" ng-show="cell.sort == 'asc'"></i>
+                                </div>
+                            </td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" ng-click="onSortableCellClick(cell)" class="rl-sortable">Market Rent
+                                <div class="rl-caret"><i class="fa fa-caret-down ng-hide" ng-show="cell.sort == 'desc'"></i><i class="fa fa-caret-up ng-hide" ng-show="cell.sort == 'asc'"></i>
+                                </div>
+                            </td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" ng-click="onSortableCellClick(cell)" class="rl-sortable">Lease Term
+                                <div class="rl-caret"><i class="fa fa-caret-down ng-hide" ng-show="cell.sort == 'desc'"></i><i class="fa fa-caret-up ng-hide" ng-show="cell.sort == 'asc'"></i>
+                                </div>
+                            </td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" ng-click="onSortableCellClick(cell)" class="rl-sortable">Months of Tenancy
+                                <div class="rl-caret"><i class="fa fa-caret-down ng-hide" ng-show="cell.sort == 'desc'"></i><i class="fa fa-caret-up ng-hide" ng-show="cell.sort == 'asc'"></i>
+                                </div>
+                            </td>
+                            <!-- end ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.frozenRows | limitTo:table.displayRowLimit -->
+                        </tbody>
+                    </table>
+                    <div class="rl-right-gutter" style="width: 17px; top: 0px; left: 1659px; height: 61px;"></div>
+                </div>
+                <div class="rl-scrollable-table" style="height: 500px;">
+                    <table style="width: 1659px;">
+                        <colgroup>
+                            <!-- ngRepeat: col in table.columnWidths.dataColumnWidths track by $index -->
+                            <col ng-repeat="col in table.columnWidths.dataColumnWidths track by $index" style="width: 86px;">
+                            <!-- end ngRepeat: col in table.columnWidths.dataColumnWidths track by $index -->
+                            <col ng-repeat="col in table.columnWidths.dataColumnWidths track by $index" style="width: 92px;">
+                            <!-- end ngRepeat: col in table.columnWidths.dataColumnWidths track by $index -->
+                            <col ng-repeat="col in table.columnWidths.dataColumnWidths track by $index" style="width: 149px;">
+                            <!-- end ngRepeat: col in table.columnWidths.dataColumnWidths track by $index -->
+                            <col ng-repeat="col in table.columnWidths.dataColumnWidths track by $index" style="width: 86px;">
+                            <!-- end ngRepeat: col in table.columnWidths.dataColumnWidths track by $index -->
+                            <col ng-repeat="col in table.columnWidths.dataColumnWidths track by $index" style="width: 86px;">
+                            <!-- end ngRepeat: col in table.columnWidths.dataColumnWidths track by $index -->
+                            <col ng-repeat="col in table.columnWidths.dataColumnWidths track by $index" style="width: 86px;">
+                            <!-- end ngRepeat: col in table.columnWidths.dataColumnWidths track by $index -->
+                            <col ng-repeat="col in table.columnWidths.dataColumnWidths track by $index" style="width: 105px;">
+                            <!-- end ngRepeat: col in table.columnWidths.dataColumnWidths track by $index -->
+                            <col ng-repeat="col in table.columnWidths.dataColumnWidths track by $index" style="width: 86px;">
+                            <!-- end ngRepeat: col in table.columnWidths.dataColumnWidths track by $index -->
+                            <col ng-repeat="col in table.columnWidths.dataColumnWidths track by $index" style="width: 101px;">
+                            <!-- end ngRepeat: col in table.columnWidths.dataColumnWidths track by $index -->
+                            <col ng-repeat="col in table.columnWidths.dataColumnWidths track by $index" style="width: 95px;">
+                            <!-- end ngRepeat: col in table.columnWidths.dataColumnWidths track by $index -->
+                            <col ng-repeat="col in table.columnWidths.dataColumnWidths track by $index" style="width: 94px;">
+                            <!-- end ngRepeat: col in table.columnWidths.dataColumnWidths track by $index -->
+                            <col ng-repeat="col in table.columnWidths.dataColumnWidths track by $index" style="width: 86px;">
+                            <!-- end ngRepeat: col in table.columnWidths.dataColumnWidths track by $index -->
+                            <col ng-repeat="col in table.columnWidths.dataColumnWidths track by $index" style="width: 86px;">
+                            <!-- end ngRepeat: col in table.columnWidths.dataColumnWidths track by $index -->
+                            <col ng-repeat="col in table.columnWidths.dataColumnWidths track by $index" style="width: 86px;">
+                            <!-- end ngRepeat: col in table.columnWidths.dataColumnWidths track by $index -->
+                            <col ng-repeat="col in table.columnWidths.dataColumnWidths track by $index" style="width: 86px;">
+                            <!-- end ngRepeat: col in table.columnWidths.dataColumnWidths track by $index -->
+                            <col ng-repeat="col in table.columnWidths.dataColumnWidths track by $index" style="width: 88px;">
+                            <!-- end ngRepeat: col in table.columnWidths.dataColumnWidths track by $index -->
+                        </colgroup>
+                        <tbody>
+                        <!-- ngRepeat: row in table.rows.dataCells | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.dataCells | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">101</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">t2167900</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Denton, Jasmine</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">a3uno</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">1 X 1</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">888</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Occ-No NTV</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">N\A</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">04/07/2017</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">04/06/2018</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">04/07/2017</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">$863</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">$57</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">$920</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">12</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">3</td>
+                            <!-- end ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.dataCells | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.dataCells | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">102</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">t2136475</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Mangini, Matthew</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">a3uno</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">1 X 1</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">888</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Occ-No NTV</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">N\A</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">05/27/2017</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">05/26/2018</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">06/27/2016</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">$921</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">$4</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">$925</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">12</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">13</td>
+                            <!-- end ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.dataCells | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.dataCells | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">103</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">t1106402</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Parks, Steven</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">a6no</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">1 X 1</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">908</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Occ-No NTV</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">N\A</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">06/17/2017</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">06/16/2018</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">06/17/2014</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">$817</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">$48</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">$865</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">12</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">37</td>
+                            <!-- end ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.dataCells | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.dataCells | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">104</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">t2117867</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Cazeres, Jocelin</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">a6uno</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">1 X 1</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">908</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Occ-No NTV</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">N\A</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">07/01/2016</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">06/30/2017</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">03/15/2016</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">$983</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">$2</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">$985</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">12</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">16</td>
+                            <!-- end ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.dataCells | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.dataCells | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">105</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">t2175200</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Joy, Stephanie</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">b2pno</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">2 X 2</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">1046</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Occ-No NTV</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">N\A</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">05/04/2017</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">05/03/2018</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">05/04/2017</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">$940</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">$60</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">$1,000</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">12</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">3</td>
+                            <!-- end ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.dataCells | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.dataCells | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">106</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">t1106405</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Aryeetey, Prince</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">b2no</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">2 X 2</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">1046</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Occ-No NTV</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">N\A</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">06/19/2017</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">06/18/2018</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">04/19/2014</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">$962</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">$-32</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">$930</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">12</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">39</td>
+                            <!-- end ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.dataCells | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.dataCells | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">107</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">tlq82980</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Lakisha Dotson</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">b2uno</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">2 X 2</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">1067</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Occ-No NTV</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">N\A</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">05/25/2017</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">03/24/2018</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">05/25/2017</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">$1,153</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">$-108</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">$1,045</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">10</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">2</td>
+                            <!-- end ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.dataCells | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.dataCells | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">108</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">N\A</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">N\A</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">b1uno</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">2 X 2</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">1067</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data"> Vacant</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Unrented</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">N\A</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">N\A</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">N\A</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">N\A</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">N\A</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">$1,080</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">N\A</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">N\A</td>
+                            <!-- end ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.dataCells | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.dataCells | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">109</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">t2054403</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Demetria Reid</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">a3uno</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">1 X 1</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">888</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Occ-No NTV</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">N\A</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">08/04/2016</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">08/03/2017</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">08/04/2015</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">$807</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">$118</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">$925</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">12</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">24</td>
+                            <!-- end ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.dataCells | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.dataCells | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">110</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">t2054950</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Barnum, Jordan</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">a3uno</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">1 X 1</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">888</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data"> Occ-NTV</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Rented</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">N\A</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">N\A</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">08/24/2015</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">$842</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">$78</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">$920</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">N\A</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">23</td>
+                            <!-- end ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.dataCells | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.dataCells | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">111</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">N\A</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">N\A</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">a6uno</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">1 X 1</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">908</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data"> Vacant</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Unrented</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">N\A</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">N\A</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">N\A</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">N\A</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">N\A</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">$985</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">N\A</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">N\A</td>
+                            <!-- end ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.dataCells | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.dataCells | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">112</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">t1106410</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Love, Kimberly</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">a6no</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">1 X 1</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">908</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Occ-No NTV</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">N\A</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">04/21/2017</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">04/20/2018</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">04/21/2014</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">$825</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">$40</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">$865</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">12</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">39</td>
+                            <!-- end ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.dataCells | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.dataCells | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">113</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">t2019551</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Carl Booker</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">a2no</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">1 X 1</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">776</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Occ-No NTV</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">N\A</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">04/07/2017</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">04/06/2018</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">03/07/2015</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">$753</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">$42</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">$795</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">12</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">28</td>
+                            <!-- end ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.dataCells | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.dataCells | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">114</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">tle86722</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Erb, Katie</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">a4uno</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">1 X 1</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">608</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Occ-No NTV</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">N\A</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">06/10/2017</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">06/09/2018</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">06/10/2016</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">$829</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">$31</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">$860</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">12</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">13</td>
+                            <!-- end ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.dataCells | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.dataCells | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">115</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">N\A</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">N\A</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">a5uno</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">1 X 1</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">800</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data"> Vacant</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Unrented</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">N\A</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">N\A</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">N\A</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">N\A</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">N\A</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">$890</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">N\A</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">N\A</td>
+                            <!-- end ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.dataCells | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.dataCells | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">116</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">t1106414</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Robert Reynolds</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">a5no</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">1 X 1</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">800</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Occ-No NTV</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">N\A</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">04/16/2017</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">04/15/2018</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">03/10/2012</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">$774</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">$26</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">$800</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">12</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">64</td>
+                            <!-- end ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.dataCells | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.dataCells | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">117</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">t2115824</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Fontanez, Jonathan</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">A1no</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">1 X 1</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">624</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Occ-No NTV</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">N\A</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">04/25/2017</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">04/24/2018</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">04/25/2016</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">$704</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">$46</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">$750</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">12</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">15</td>
+                            <!-- end ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.dataCells | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.dataCells | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">118</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">t2170513</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Hincapie, Shandi</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">A1no</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">1 X 1</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">624</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Occ-No NTV</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">N\A</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">04/21/2017</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">04/20/2018</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">04/21/2017</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">$703</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">$37</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">$740</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">12</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">3</td>
+                            <!-- end ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.dataCells | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.dataCells | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">119</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">t2003317</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Chelsea Williams</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">a5no</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">1 X 1</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">800</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Occ-No NTV</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">N\A</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">02/10/2017</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">02/09/2018</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">01/10/2015</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">$730</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">$65</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">$795</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">12</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">30</td>
+                            <!-- end ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.dataCells | limitTo:table.displayRowLimit -->
+                        <tr ng-repeat="row in table.rows.dataCells | limitTo:table.displayRowLimit" style="height: 24px;">
+                            <!-- ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">120</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">t1106418</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Phillip Barton</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">a5no</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">1 X 1</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">800</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">Occ-No NTV</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">N\A</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">03/02/2017</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">03/01/2018</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">12/22/2012</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">$765</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">$50</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">$815</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">12</td>
+                            <!-- end ngRepeat: cell in row -->
+                            <td ng-repeat="cell in row" ng-class="{ 'rl-value': cell.isValue &amp;&amp; !cell.isDimMember, 'rl-total': cell.isTotal, 'rl-sortable': cell.isSortable, 'rl-data': !cell.isSortable }" colspan="" rowspan="" ng-style="!cell.isTotal &amp;&amp; { 'background-color': cell.color }" class="rl-value rl-data">55</td>
+                            <!-- end ngRepeat: cell in row -->
+                        </tr>
+                        <!-- end ngRepeat: row in table.rows.dataCells | limitTo:table.displayRowLimit -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end ngIf: hasData -->
+    <!-- ngIf: hasData && pages.length > 1 -->
+    <div class="rl-table-pagination" ng-if="hasData &amp;&amp; pages.length > 1">
+        <div class="rl-row-indicator">Rows 1 - 20
+            <!-- ngIf: table.hasTotalPageCount -->
+        </div><a ng-click="onPageClick(null, 'first')">&lt;&lt;</a><a ng-click="onPageClick(null, 'previous')">&lt;</a>
+        <!-- ngRepeat: page in pages --><a ng-repeat="page in pages" ng-click="onPageClick(page)" ng-class="{ 'rl-selected': page == currentPage }" class="rl-selected">1</a>
+        <!-- end ngRepeat: page in pages --><a ng-repeat="page in pages" ng-click="onPageClick(page)" ng-class="{ 'rl-selected': page == currentPage }">2</a>
+        <!-- end ngRepeat: page in pages --><a ng-repeat="page in pages" ng-click="onPageClick(page)" ng-class="{ 'rl-selected': page == currentPage }">3</a>
+        <!-- end ngRepeat: page in pages --><a ng-repeat="page in pages" ng-click="onPageClick(page)" ng-class="{ 'rl-selected': page == currentPage }">4</a>
+        <!-- end ngRepeat: page in pages --><a ng-repeat="page in pages" ng-click="onPageClick(page)" ng-class="{ 'rl-selected': page == currentPage }">5</a>
+        <!-- end ngRepeat: page in pages --><a ng-repeat="page in pages" ng-click="onPageClick(page)" ng-class="{ 'rl-selected': page == currentPage }">6</a>
+        <!-- end ngRepeat: page in pages --><a ng-repeat="page in pages" ng-click="onPageClick(page)" ng-class="{ 'rl-selected': page == currentPage }">7</a>
+        <!-- end ngRepeat: page in pages --><a ng-click="onPageClick(null, 'next')">&gt;</a>
+        <!-- ngIf: table.pagination.numberOfPages -->
+    </div>
+    <!-- end ngIf: hasData && pages.length > 1 -->
+</div>

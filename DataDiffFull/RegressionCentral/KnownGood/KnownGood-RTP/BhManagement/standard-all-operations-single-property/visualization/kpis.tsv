@@ -1,0 +1,44 @@
+kpi1:# Units	primary	246
+kpi1:# Units	secondary	NO_VALUE
+kpi2:Occupancy  Percent	primary	97.6%
+kpi2:Occupancy  Percent	secondary	NO_VALUE
+kpi3:Vacant Units	primary	5
+kpi3:Vacant Units	secondary	NO_VALUE
+kpi4:Notice Units	primary	25
+kpi4:Notice Units	secondary	NO_VALUE
+kpi5:Avg Actual  Rent	primary	$962
+kpi5:Avg Actual  Rent	secondary	NO_VALUE
+kpi6:Vacant Market Rent	primary	$1,230
+kpi6:Vacant Market Rent	secondary	NO_VALUE
+kpi7:Loss to Lease	primary	$191
+kpi7:Loss to Lease	secondary	NO_VALUE
+kpi8:Loss to Lease %	primary	16.5%
+kpi8:Loss to Lease %	secondary	NO_VALUE
+kpi9:# of Delinquent Residents	primary	14
+kpi9:# of Delinquent Residents	secondary	NO_VALUE
+kpi10:Avg Outstanding Balance	primary	$40
+kpi10:Avg Outstanding Balance	secondary	NO_VALUE
+kpi11:Delinquent % of Rent	primary	0.2%
+kpi11:Delinquent % of Rent	secondary	NO_VALUE
+kpi12:Total Aged Balance	primary	$39.97
+kpi12:Total Aged Balance	secondary	NO_VALUE
+kpi13:Future Occupancy %	primary	91.1%
+kpi13:Future Occupancy %	secondary	NO_VALUE
+kpi14:Pending Move-Ins	primary	9
+kpi14:Pending Move-Ins	secondary	NO_VALUE
+kpi15:NTV Units	primary	25
+kpi15:NTV Units	secondary	NO_VALUE
+kpi16:Rented %	primary	30.0%
+kpi16:Rented %	secondary	NO_VALUE
+kpi17:Vacant Units	primary	5
+kpi17:Vacant Units	secondary	NO_VALUE
+kpi18:Current Vacancy Cost	primary	$5.73K
+kpi18:Current Vacancy Cost	secondary	NO_VALUE
+kpi19:Avg Days Vacant	primary	28.4
+kpi19:Avg Days Vacant	secondary	117
+kpi20:Make Ready %	primary	40.0%
+kpi20:Make Ready %	secondary	60.0%
+kpi21:Avg Lease Term	primary	13.7
+kpi21:Avg Lease Term	secondary	NO_VALUE
+kpi22:Avg Months of Tenancy	primary	30.9
+kpi22:Avg Months of Tenancy	secondary	NO_VALUE

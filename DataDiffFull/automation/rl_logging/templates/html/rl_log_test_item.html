@@ -1,0 +1,36 @@
+<div class="test">
+    <div class=heading>
+        {{ collapse_badge_content }}
+        {{ status_badge_content }}
+        <div class="content">{{ data["name"] }} ({{ data["type"] }})</div>
+    </div>
+
+    <div class="body-content hide">
+
+        {% if data["type"] == "Suite" %}
+        <div class="summary">
+            <div class="heading">Summary:</div>
+            <div>Total Tests: {{ data["total_tests"] }}</div>
+            <div class="fail">Fail: {{ data["total_failures"] }}</div>
+            <div class="pass">Pass: {{ data["total_tests"] - data["total_failures"] }}</div>
+        </div>
+        {% endif %}
+
+        {% if data["starttime"] != "" %}
+        <div>
+            <div class='starttime timestamp'>Start Time: {{ data["starttime"] }}</div>
+            <div class='endtime timestamp'>End Time: {{ data["endtime"] }}</div>
+        </div>
+        {% endif %}
+
+        {{ logging_content }}
+
+        {{ error_content }}
+        <div class="children">
+            {{ tests_content }}
+        </div>
+
+        {{ keywords_content }}
+
+    </div>
+</div>

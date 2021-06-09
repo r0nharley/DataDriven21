@@ -1,0 +1,300 @@
+0110	Resident ID	N\A
+0110	Resident Name	N\A
+0110	Unit Type	B1ap
+0110	Bed-Bath	2 X 2
+0110	Unit SF	1071.0
+0110	Occupancy Status	Admin/Down
+0110	Future Rented Status	N\A
+0110	Lease Start	N\A
+0110	Lease End	08/15/2016
+0110	Move-in	N\A
+0110	Actual Rent	N\A
+0110	Loss to Lease	N\A
+0110	Market Rent	1225.0
+0110	Lease Term	N\A
+0110	Months of Tenancy	N\A
+0111	Resident ID	t1057500
+0111	Resident Name	Company, Allied Heating and Air
+0111	Unit Type	B1ap
+0111	Bed-Bath	2 X 2
+0111	Unit SF	1071.0
+0111	Occupancy Status	Occ-No NTV
+0111	Future Rented Status	N\A
+0111	Lease Start	10/15/2015
+0111	Lease End	10/14/2016
+0111	Move-in	10/15/2010
+0111	Actual Rent	1175.0
+0111	Loss to Lease	50.0
+0111	Market Rent	1225.0
+0111	Lease Term	12.0
+0111	Months of Tenancy	82.0
+0112	Resident ID	t2121509
+0112	Resident Name	Stevens, Nicolette
+0112	Unit Type	A3ap
+0112	Bed-Bath	1 X 1
+0112	Unit SF	751.0
+0112	Occupancy Status	Occ-No NTV
+0112	Future Rented Status	N\A
+0112	Lease Start	04/29/2016
+0112	Lease End	05/28/2017
+0112	Move-in	04/29/2016
+0112	Actual Rent	795.0
+0112	Loss to Lease	250.0
+0112	Market Rent	1045.0
+0112	Lease Term	13.0
+0112	Months of Tenancy	16.0
+0113	Resident ID	t2089854
+0113	Resident Name	Sims, Ashley
+0113	Unit Type	A3ap
+0113	Bed-Bath	1 X 1
+0113	Unit SF	751.0
+0113	Occupancy Status	Occ-No NTV
+0113	Future Rented Status	N\A
+0113	Lease Start	11/30/2015
+0113	Lease End	12/29/2016
+0113	Move-in	11/30/2015
+0113	Actual Rent	868.0
+0113	Loss to Lease	177.0
+0113	Market Rent	1045.0
+0113	Lease Term	13.0
+0113	Months of Tenancy	21.0
+0114	Resident ID	t1125074
+0114	Resident Name	Craig, Cathrine
+0114	Unit Type	A3ap
+0114	Bed-Bath	1 X 1
+0114	Unit SF	751.0
+0114	Occupancy Status	Occ-No NTV
+0114	Future Rented Status	N\A
+0114	Lease Start	11/07/2015
+0114	Lease End	12/06/2016
+0114	Move-in	11/07/2015
+0114	Actual Rent	886.0
+0114	Loss to Lease	179.0
+0114	Market Rent	1065.0
+0114	Lease Term	13.0
+0114	Months of Tenancy	22.0
+0115	Resident ID	t2083268
+0115	Resident Name	NIX, CALVIN
+0115	Unit Type	A3ap
+0115	Bed-Bath	1 X 1
+0115	Unit SF	751.0
+0115	Occupancy Status	Occ-No NTV
+0115	Future Rented Status	N\A
+0115	Lease Start	10/30/2015
+0115	Lease End	11/29/2016
+0115	Move-in	10/30/2015
+0115	Actual Rent	925.0
+0115	Loss to Lease	140.0
+0115	Market Rent	1065.0
+0115	Lease Term	13.0
+0115	Months of Tenancy	22.0
+0116	Resident ID	t1197326
+0116	Resident Name	LeBlanc, Scott
+0116	Unit Type	B1ap
+0116	Bed-Bath	2 X 2
+0116	Unit SF	1071.0
+0116	Occupancy Status	Occ-No NTV
+0116	Future Rented Status	N\A
+0116	Lease Start	06/17/2016
+0116	Lease End	05/16/2017
+0116	Move-in	06/25/2016
+0116	Actual Rent	934.0
+0116	Loss to Lease	291.0
+0116	Market Rent	1225.0
+0116	Lease Term	11.0
+0116	Months of Tenancy	14.0
+0117	Resident ID	t1057506
+0117	Resident Name	Sherman, Chad
+0117	Unit Type	B1ap
+0117	Bed-Bath	2 X 2
+0117	Unit SF	1071.0
+0117	Occupancy Status	Occ-No NTV
+0117	Future Rented Status	N\A
+0117	Lease Start	06/21/2015
+0117	Lease End	06/20/2016
+0117	Move-in	06/21/2013
+0117	Actual Rent	1189.0
+0117	Loss to Lease	56.0
+0117	Market Rent	1245.0
+0117	Lease Term	12.0
+0117	Months of Tenancy	50.0
+0120	Resident ID	t2106199
+0120	Resident Name	Guidry, Dallas
+0120	Unit Type	B1ap
+0120	Bed-Bath	2 X 2
+0120	Unit SF	1071.0
+0120	Occupancy Status	Occ-NTV
+0120	Future Rented Status	Unrented
+0120	Lease Start	01/28/2016
+0120	Lease End	07/27/2016
+0120	Move-in	01/28/2016
+0120	Actual Rent	890.0
+0120	Loss to Lease	330.0
+0120	Market Rent	1220.0
+0120	Lease Term	6.0
+0120	Months of Tenancy	19.0
+0121	Resident ID	t1070189
+0121	Resident Name	Arceneaux, Whitney
+0121	Unit Type	B1ap
+0121	Bed-Bath	2 X 2
+0121	Unit SF	1071.0
+0121	Occupancy Status	Occ-NTV
+0121	Future Rented Status	Unrented
+0121	Lease Start	05/25/2015
+0121	Lease End	06/30/2016
+0121	Move-in	05/25/2014
+0121	Actual Rent	1174.0
+0121	Loss to Lease	26.0
+0121	Market Rent	1200.0
+0121	Lease Term	14.0
+0121	Months of Tenancy	39.0
+0122	Resident ID	t2088708
+0122	Resident Name	Jasper, Denise
+0122	Unit Type	A3ap
+0122	Bed-Bath	1 X 1
+0122	Unit SF	751.0
+0122	Occupancy Status	Occ-No NTV
+0122	Future Rented Status	N\A
+0122	Lease Start	11/18/2015
+0122	Lease End	12/17/2016
+0122	Move-in	11/18/2015
+0122	Actual Rent	703.0
+0122	Loss to Lease	317.0
+0122	Market Rent	1020.0
+0122	Lease Term	13.0
+0122	Months of Tenancy	21.0
+0123	Resident ID	t1057510
+0123	Resident Name	Bourne, James
+0123	Unit Type	A3ap
+0123	Bed-Bath	1 X 1
+0123	Unit SF	751.0
+0123	Occupancy Status	Occ-No NTV
+0123	Future Rented Status	N\A
+0123	Lease Start	03/01/2016
+0123	Lease End	02/28/2017
+0123	Move-in	11/01/2008
+0123	Actual Rent	916.0
+0123	Loss to Lease	104.0
+0123	Market Rent	1020.0
+0123	Lease Term	12.0
+0123	Months of Tenancy	106.0
+0124	Resident ID	t2113173
+0124	Resident Name	Prestenbach, Shannon
+0124	Unit Type	A3ap
+0124	Bed-Bath	1 X 1
+0124	Unit SF	751.0
+0124	Occupancy Status	Occ-No NTV
+0124	Future Rented Status	N\A
+0124	Lease Start	03/02/2016
+0124	Lease End	06/01/2017
+0124	Move-in	03/02/2016
+0124	Actual Rent	714.0
+0124	Loss to Lease	326.0
+0124	Market Rent	1040.0
+0124	Lease Term	15.0
+0124	Months of Tenancy	18.0
+0125	Resident ID	t2115815
+0125	Resident Name	Verdin, Jacoby
+0125	Unit Type	A3ap
+0125	Bed-Bath	1 X 1
+0125	Unit SF	751.0
+0125	Occupancy Status	Occ-No NTV
+0125	Future Rented Status	N\A
+0125	Lease Start	04/16/2016
+0125	Lease End	07/15/2017
+0125	Move-in	04/16/2016
+0125	Actual Rent	773.0
+0125	Loss to Lease	232.0
+0125	Market Rent	1005.0
+0125	Lease Term	15.0
+0125	Months of Tenancy	16.0
+0126	Resident ID	t1069903
+0126	Resident Name	Lena, Lacey
+0126	Unit Type	B1ap
+0126	Bed-Bath	2 X 2
+0126	Unit SF	1071.0
+0126	Occupancy Status	Occ-No NTV
+0126	Future Rented Status	N\A
+0126	Lease Start	08/21/2015
+0126	Lease End	08/20/2016
+0126	Move-in	08/21/2014
+0126	Actual Rent	996.0
+0126	Loss to Lease	204.0
+0126	Market Rent	1200.0
+0126	Lease Term	12.0
+0126	Months of Tenancy	36.0
+0127	Resident ID	t1057514
+0127	Resident Name	Marques, Wilson
+0127	Unit Type	B1ap
+0127	Bed-Bath	2 X 2
+0127	Unit SF	1071.0
+0127	Occupancy Status	Occ-No NTV
+0127	Future Rented Status	N\A
+0127	Lease Start	03/09/2016
+0127	Lease End	03/08/2017
+0127	Move-in	03/09/2013
+0127	Actual Rent	1078.0
+0127	Loss to Lease	142.0
+0127	Market Rent	1220.0
+0127	Lease Term	12.0
+0127	Months of Tenancy	54.0
+0130	Resident ID	t2123417
+0130	Resident Name	miller, kalsey
+0130	Unit Type	B2ap
+0130	Bed-Bath	2 X 2
+0130	Unit SF	1171.0
+0130	Occupancy Status	Occ-No NTV
+0130	Future Rented Status	N\A
+0130	Lease Start	04/20/2016
+0130	Lease End	07/19/2017
+0130	Move-in	04/20/2016
+0130	Actual Rent	859.0
+0130	Loss to Lease	376.0
+0130	Market Rent	1235.0
+0130	Lease Term	15.0
+0130	Months of Tenancy	16.0
+0131	Resident ID	t2085305
+0131	Resident Name	Henderson, Paul
+0131	Unit Type	B1ap
+0131	Bed-Bath	2 X 2
+0131	Unit SF	1071.0
+0131	Occupancy Status	Occ-No NTV
+0131	Future Rented Status	N\A
+0131	Lease Start	05/07/2016
+0131	Lease End	11/06/2016
+0131	Move-in	11/07/2015
+0131	Actual Rent	1058.0
+0131	Loss to Lease	112.0
+0131	Market Rent	1170.0
+0131	Lease Term	6.0
+0131	Months of Tenancy	22.0
+0132	Resident ID	t2079495
+0132	Resident Name	Bergeron, Benjamin
+0132	Unit Type	A4ap
+0132	Bed-Bath	1 X 1
+0132	Unit SF	851.0
+0132	Occupancy Status	Occ-No NTV
+0132	Future Rented Status	N\A
+0132	Lease Start	09/26/2015
+0132	Lease End	10/25/2016
+0132	Move-in	09/26/2015
+0132	Actual Rent	823.0
+0132	Loss to Lease	267.0
+0132	Market Rent	1090.0
+0132	Lease Term	13.0
+0132	Months of Tenancy	23.0
+0133	Resident ID	t2072744
+0133	Resident Name	Stakenborghs, Ryan
+0133	Unit Type	A3ap
+0133	Bed-Bath	1 X 1
+0133	Unit SF	751.0
+0133	Occupancy Status	Occ-No NTV
+0133	Future Rented Status	N\A
+0133	Lease Start	09/12/2015
+0133	Lease End	10/11/2016
+0133	Move-in	09/12/2015
+0133	Actual Rent	762.0
+0133	Loss to Lease	228.0
+0133	Market Rent	990.0
+0133	Lease Term	13.0
+0133	Months of Tenancy	23.0

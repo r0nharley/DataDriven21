@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20171211 14:41:43.735" generator="Robot 3.0 (Python 2.7.10 on darwin)">
+<suite source="/Users/emma/Repos/RobotFramework/RegressionCentral/FunctionalTests.robot" id="s1" name="FunctionalTests">
+<test id="s1-t1" name="Create User Test">
+<kw type="setup" name="Begin Web Test">
+<msg timestamp="20171211 14:41:43.770" level="FAIL">No keyword with name 'Begin Web Test' found.</msg>
+<status status="FAIL" endtime="20171211 14:41:43.770" starttime="20171211 14:41:43.770"></status>
+</kw>
+<kw type="teardown" name="End Web Test">
+<msg timestamp="20171211 14:41:43.772" level="FAIL">No keyword with name 'End Web Test' found.</msg>
+<status status="FAIL" endtime="20171211 14:41:43.772" starttime="20171211 14:41:43.772">No keyword with name 'End Web Test' found.</status>
+</kw>
+<status status="FAIL" endtime="20171211 14:41:43.772" critical="yes" starttime="20171211 14:41:43.768">Setup failed:
+No keyword with name 'Begin Web Test' found.
+
+Also teardown failed:
+No keyword with name 'End Web Test' found.</status>
+</test>
+<test id="s1-t2" name="User Extended Signin Test">
+<kw type="setup" name="Begin Web Test">
+<msg timestamp="20171211 14:41:43.774" level="FAIL">No keyword with name 'Begin Web Test' found.</msg>
+<status status="FAIL" endtime="20171211 14:41:43.774" starttime="20171211 14:41:43.774"></status>
+</kw>
+<kw type="teardown" name="End Web Test">
+<msg timestamp="20171211 14:41:43.775" level="FAIL">No keyword with name 'End Web Test' found.</msg>
+<status status="FAIL" endtime="20171211 14:41:43.775" starttime="20171211 14:41:43.775">No keyword with name 'End Web Test' found.</status>
+</kw>
+<status status="FAIL" endtime="20171211 14:41:43.775" critical="yes" starttime="20171211 14:41:43.772">Setup failed:
+No keyword with name 'Begin Web Test' found.
+
+Also teardown failed:
+No keyword with name 'End Web Test' found.</status>
+</test>
+<test id="s1-t3" name="BI Search Test">
+<kw type="setup" name="Begin Web Test">
+<msg timestamp="20171211 14:41:43.777" level="FAIL">No keyword with name 'Begin Web Test' found.</msg>
+<status status="FAIL" endtime="20171211 14:41:43.777" starttime="20171211 14:41:43.777"></status>
+</kw>
+<kw type="teardown" name="End Web Test">
+<msg timestamp="20171211 14:41:43.779" level="FAIL">No keyword with name 'End Web Test' found.</msg>
+<status status="FAIL" endtime="20171211 14:41:43.779" starttime="20171211 14:41:43.779">No keyword with name 'End Web Test' found.</status>
+</kw>
+<status status="FAIL" endtime="20171211 14:41:43.779" critical="yes" starttime="20171211 14:41:43.776">Setup failed:
+No keyword with name 'Begin Web Test' found.
+
+Also teardown failed:
+No keyword with name 'End Web Test' found.</status>
+</test>
+<test id="s1-t4" name="Highlight Filter Test">
+<kw type="setup" name="Begin Web Test">
+<msg timestamp="20171211 14:41:43.781" level="FAIL">No keyword with name 'Begin Web Test' found.</msg>
+<status status="FAIL" endtime="20171211 14:41:43.781" starttime="20171211 14:41:43.781"></status>
+</kw>
+<kw type="teardown" name="End Web Test">
+<msg timestamp="20171211 14:41:43.783" level="FAIL">No keyword with name 'End Web Test' found.</msg>
+<status status="FAIL" endtime="20171211 14:41:43.783" starttime="20171211 14:41:43.783">No keyword with name 'End Web Test' found.</status>
+</kw>
+<status status="FAIL" endtime="20171211 14:41:43.783" critical="yes" starttime="20171211 14:41:43.779">Setup failed:
+No keyword with name 'Begin Web Test' found.
+
+Also teardown failed:
+No keyword with name 'End Web Test' found.</status>
+</test>
+<test id="s1-t5" name="BI Filter Test">
+<kw type="setup" name="Begin Web Test">
+<msg timestamp="20171211 14:41:43.785" level="FAIL">No keyword with name 'Begin Web Test' found.</msg>
+<status status="FAIL" endtime="20171211 14:41:43.785" starttime="20171211 14:41:43.785"></status>
+</kw>
+<kw type="teardown" name="End Web Test">
+<msg timestamp="20171211 14:41:43.786" level="FAIL">No keyword with name 'End Web Test' found.</msg>
+<status status="FAIL" endtime="20171211 14:41:43.786" starttime="20171211 14:41:43.786">No keyword with name 'End Web Test' found.</status>
+</kw>
+<status status="FAIL" endtime="20171211 14:41:43.786" critical="yes" starttime="20171211 14:41:43.783">Setup failed:
+No keyword with name 'Begin Web Test' found.
+
+Also teardown failed:
+No keyword with name 'End Web Test' found.</status>
+</test>
+<test id="s1-t6" name="Pinboards Test">
+<kw type="setup" name="Begin Web Test">
+<msg timestamp="20171211 14:41:43.788" level="FAIL">No keyword with name 'Begin Web Test' found.</msg>
+<status status="FAIL" endtime="20171211 14:41:43.788" starttime="20171211 14:41:43.788"></status>
+</kw>
+<kw type="teardown" name="Pinboards Test Teardown">
+<kw name="Run Keyword If Test Failed" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<arguments>
+<arg>Log To Console</arg>
+<arg>Test Failed, now trying to delete any remaining Pinboards</arg>
+</arguments>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Test Failed, now trying to delete any remaining Pinboards</arg>
+</arguments>
+<status status="PASS" endtime="20171211 14:41:43.789" starttime="20171211 14:41:43.789"></status>
+</kw>
+<status status="PASS" endtime="20171211 14:41:43.789" starttime="20171211 14:41:43.789"></status>
+</kw>
+<kw name="Run Keyword If Test Failed" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<arguments>
+<arg>MyPinboardTest.Delete Pinboards</arg>
+</arguments>
+<kw name="MyPinboardTest.Delete Pinboards">
+<msg timestamp="20171211 14:41:43.791" level="FAIL">No keyword with name 'MyPinboardTest.Delete Pinboards' found.</msg>
+<status status="FAIL" endtime="20171211 14:41:43.791" starttime="20171211 14:41:43.791"></status>
+</kw>
+<status status="FAIL" endtime="20171211 14:41:43.792" starttime="20171211 14:41:43.790"></status>
+</kw>
+<kw name="End Web Test">
+<msg timestamp="20171211 14:41:43.793" level="FAIL">No keyword with name 'End Web Test' found.</msg>
+<status status="FAIL" endtime="20171211 14:41:43.793" starttime="20171211 14:41:43.793"></status>
+</kw>
+<status status="FAIL" endtime="20171211 14:41:43.793" starttime="20171211 14:41:43.789">Several failures occurred:
+
+1) No keyword with name 'MyPinboardTest.Delete Pinboards' found.
+
+2) No keyword with name 'End Web Test' found.</status>
+</kw>
+<status status="FAIL" endtime="20171211 14:41:43.793" critical="yes" starttime="20171211 14:41:43.787">Setup failed:
+No keyword with name 'Begin Web Test' found.
+
+Also teardown failed:
+Several failures occurred:
+
+1) No keyword with name 'MyPinboardTest.Delete Pinboards' found.
+
+2) No keyword with name 'End Web Test' found.</status>
+</test>
+<test id="s1-t7" name="Delete User Test">
+<kw type="setup" name="Begin Web Test">
+<msg timestamp="20171211 14:41:43.795" level="FAIL">No keyword with name 'Begin Web Test' found.</msg>
+<status status="FAIL" endtime="20171211 14:41:43.795" starttime="20171211 14:41:43.795"></status>
+</kw>
+<kw type="teardown" name="End Web Test">
+<msg timestamp="20171211 14:41:43.797" level="FAIL">No keyword with name 'End Web Test' found.</msg>
+<status status="FAIL" endtime="20171211 14:41:43.797" starttime="20171211 14:41:43.797">No keyword with name 'End Web Test' found.</status>
+</kw>
+<status status="FAIL" endtime="20171211 14:41:43.797" critical="yes" starttime="20171211 14:41:43.793">Setup failed:
+No keyword with name 'Begin Web Test' found.
+
+Also teardown failed:
+No keyword with name 'End Web Test' found.</status>
+</test>
+<doc>Rentlytics functional tests suite</doc>
+<status status="FAIL" endtime="20171211 14:41:43.798" starttime="20171211 14:41:43.737"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="7" pass="0">Critical Tests</stat>
+<stat fail="7" pass="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="7" id="s1" name="FunctionalTests" pass="0">FunctionalTests</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20171211 14:41:43.762" level="ERROR">Error in file '/Users/emma/Repos/RobotFramework/RegressionCentral/FunctionalTests.robot': Resource file '/Users/emma/Repos/RobotFramework/RegressionCentral/RegressionCentral/CommonV.robot' does not exist.</msg>
+<msg timestamp="20171211 14:41:43.763" level="ERROR">Error in file '/Users/emma/Repos/RobotFramework/RegressionCentral/FunctionalTests.robot': Resource file '/Users/emma/Repos/RobotFramework/RegressionCentral/RegressionCentral/CreateUser.robot' does not exist.</msg>
+<msg timestamp="20171211 14:41:43.763" level="ERROR">Error in file '/Users/emma/Repos/RobotFramework/RegressionCentral/FunctionalTests.robot': Resource file '/Users/emma/Repos/RobotFramework/RegressionCentral/RegressionCentral/DeleteUser.robot' does not exist.</msg>
+<msg timestamp="20171211 14:41:43.763" level="ERROR">Error in file '/Users/emma/Repos/RobotFramework/RegressionCentral/FunctionalTests.robot': Resource file '/Users/emma/Repos/RobotFramework/RegressionCentral/RegressionCentral/SignInTest.robot' does not exist.</msg>
+<msg timestamp="20171211 14:41:43.763" level="ERROR">Error in file '/Users/emma/Repos/RobotFramework/RegressionCentral/FunctionalTests.robot': Resource file '/Users/emma/Repos/RobotFramework/RegressionCentral/RegressionCentral/SearchTest.robot' does not exist.</msg>
+<msg timestamp="20171211 14:41:43.763" level="ERROR">Error in file '/Users/emma/Repos/RobotFramework/RegressionCentral/FunctionalTests.robot': Resource file '/Users/emma/Repos/RobotFramework/RegressionCentral/RegressionCentral/FilterTest.robot' does not exist.</msg>
+<msg timestamp="20171211 14:41:43.763" level="ERROR">Error in file '/Users/emma/Repos/RobotFramework/RegressionCentral/FunctionalTests.robot': Resource file '/Users/emma/Repos/RobotFramework/RegressionCentral/RegressionCentral/MyPinboardTest.robot' does not exist.</msg>
+<msg timestamp="20171211 14:41:43.764" level="ERROR">Error in file '/Users/emma/Repos/RobotFramework/RegressionCentral/FunctionalTests.robot': Resource file '/Users/emma/Repos/RobotFramework/RegressionCentral/RegressionCentral/HighlightFilterTest.robot' does not exist.</msg>
+<msg timestamp="20171211 14:41:43.764" level="ERROR">Error in file '/Users/emma/Repos/RobotFramework/RegressionCentral/FunctionalTests.robot': Setting variable '${APP_URL}' failed: Recursive variable definition.</msg>
+<msg timestamp="20171211 14:41:43.765" level="ERROR">Error in file '/Users/emma/Repos/RobotFramework/RegressionCentral/FunctionalTests.robot': Setting variable '${ORG_SLUG}' failed: Recursive variable definition.</msg>
+<msg timestamp="20171211 14:41:43.766" level="ERROR">Error in file '/Users/emma/Repos/RobotFramework/RegressionCentral/FunctionalTests.robot': Setting variable '${START_URL}' failed: Variable '${app_url}' not found.</msg>
+<msg timestamp="20171211 14:41:43.767" level="ERROR">Error in file '/Users/emma/Repos/RobotFramework/RegressionCentral/FunctionalTests.robot': Setting variable '${START_URL_DB_ADMIN}' failed: Variable '${admin_url}' not found.</msg>
+</errors>
+</robot>

@@ -1,0 +1,31 @@
+version: "2"         # required to adjust maintainability checks
+checks:
+  method-complexity:
+      enabled: true
+      config:
+        threshold: 10
+plugins:
+  radon:
+    enabled: true
+    config:
+      python_version: 2
+      threshold: "C"
+  duplication:
+    enabled: true
+    checks:
+      Similar code:
+        enabled: false
+    config:
+      languages:
+        python:
+          mass_threshold: 64 # 32 is the recommended default
+  fixme:
+    enabled: true
+    config:
+      strings:
+      - TODO
+  shellcheck:
+    enabled: true
+
+exclude_patterns:
+- .codeclimate.yml

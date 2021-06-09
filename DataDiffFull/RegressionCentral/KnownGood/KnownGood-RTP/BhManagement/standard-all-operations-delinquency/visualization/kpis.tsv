@@ -1,0 +1,10 @@
+kpi1:# Delinquent	primary	252
+kpi1:# Delinquent	secondary	NO_VALUE
+kpi2:$ Per Delinquent Resident	primary	$190
+kpi2:$ Per Delinquent Resident	secondary	NO_VALUE
+kpi3:Total Delinquent % of Rent	primary	0.8%
+kpi3:Total Delinquent % of Rent	secondary	NO_VALUE
+kpi4:Total Delinquent Balance	primary	$48K
+kpi4:Total Delinquent Balance	secondary	NO_VALUE
+kpi5:0-30 Days Balance	primary	$40K
+kpi5:0-30 Days Balance	secondary	NO_VALUE
